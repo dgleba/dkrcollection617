@@ -1,7 +1,6 @@
+
 FROM python:3.7
 WORKDIR /code
-
-RUN  chmod -R g+rws  /code
 
 # RUN  mkdir -p /pipcache 
 # RUN  chown -R "0:33"  /rootzzz
@@ -11,7 +10,14 @@ RUN  chmod -R g+rws  /code
 RUN apt-get update && apt-get install -y cron 
 
 ADD requirements.txt /code/
+# ADD  --chmod=0755  entrypoint.sh /code/
+# ADD  entrypoint.sh /code/
+
 RUN pip install  -r requirements.txt
+
+RUN  chmod -R g+rws  /code
+
+# RUN  chmod -R +x  /code/entrypoint.sh
 
 # use volume in docker-compose..
 # COPY . /code/

@@ -16,7 +16,8 @@ cs:
 	  docker-compose -f docker-compose.prod.yml run --rm  djprod python manage.py collectstatic --noinput
 
 
-
+lite:
+	bash -c "rmdir /code/db.sqlite3"; touch /code/db.sqlite3;
 
 
 cronad:
