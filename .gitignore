@@ -1,3 +1,13 @@
+
+x/
+sysdata/
+zip/
+datasys/
+data/
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
