@@ -37,3 +37,17 @@ chmod +x entrypoint.sh
 
 =================================================
 
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  folder db.sqlite3
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2021-12-29[Dec-Wed]16-40PM 
+
+
+If db.sqlite3 does not exist when starting with `dc up`, it will create a folder called db.sqlite3.
+
+Run migrations first or touch db.sqlite3.
+
+=================================================
+

@@ -6,8 +6,9 @@
 # I can't seem to get writable group permissions 2018-08-27_Mon_21.28-PM
 #
 
-mmb:
-	docker-compose run --rm djdev python manage.py makemigrations blogapp
+mm:
+	docker-compose run --rm djdev python manage.py makemigrations mark616
+	# docker-compose run --rm djdev python manage.py makemigrations blogapp
 
 mig:
 	docker-compose run --rm djdev python manage.py migrate

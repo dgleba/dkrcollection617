@@ -30,10 +30,10 @@ urlpatterns = [
 
     path('blogapp/', include('blogapp.urls')),
 
-    path('admin/', admin.site.urls),
+    path('admin2323/', admin.site.urls),
     
     # for second admin site
-    path('adminb/', admin2.urls),
+    path('adminb2/', admin2.urls),
 
     # for jwt
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -41,4 +41,7 @@ urlpatterns = [
 
     # for html login
     path('accounts/', include('django.contrib.auth.urls')),
+
+    path('mark616/', include('mark616.urls')),
+    
 ]
