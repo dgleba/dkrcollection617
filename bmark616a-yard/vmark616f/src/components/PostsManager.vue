@@ -95,6 +95,7 @@ export default {
     async refreshPosts () {
       this.loading = true // for original alert
       this.showoverlay = true // for overlay
+        console.log("posts ~98");
       this.posts = await this.getPosts()
       this.loading = false
       this.showoverlay = false
@@ -142,6 +143,7 @@ export default {
         }
       })
       .then(req => {
+        console.log(data);
         return req.data
       })
       .catch(e => {
