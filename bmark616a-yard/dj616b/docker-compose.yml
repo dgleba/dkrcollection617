@@ -16,12 +16,13 @@ services:
     # problem is that they are read only for group www-data. Use make perm to make them writable.
     user: "0:33"
     env_file:
+      - ./.env.dev
       - ./.env
     # entrypoint: sh /code/entrypoint.sh
     # entrypoint: /code/entrypoint.sh
     #
     #  to avoid running apscheduler twice use --noreload   https://stackoverflow.com/questions/33814615/how-to-avoid-appconfig-ready-method-running-twice-in-django
-    command: python manage.py runserver 0.0.0.0:8000 --noreload
+    command: python manage.py runserver 0.0.0.0:8000 --noreload 
     #
     volumes:
       - /etc/localtime:/etc/localtime:ro

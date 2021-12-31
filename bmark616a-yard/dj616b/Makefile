@@ -13,8 +13,6 @@ mm:
 mig:
 	docker-compose run --rm djdev python manage.py migrate
 
-cs:
-	  docker-compose -f docker-compose.prod.yml run --rm  djprod python manage.py collectstatic --noinput
 
 
 lite:
@@ -33,8 +31,14 @@ perm:
 
 # shell in django
 #
-djbash:
-	docker-compose run djangodev /bin/bash
+sh:
+	docker-compose run djdev /bin/bash
+
+
+##  production !!
+
+cs:
+	  docker-compose -f docker-compose.prod.yml run --rm  djprod python manage.py collectstatic --noinput
 
 
 prb:

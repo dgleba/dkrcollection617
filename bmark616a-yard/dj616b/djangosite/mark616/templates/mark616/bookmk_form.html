@@ -43,4 +43,17 @@
   <input type="submit" value="Save" class="btn btn-primary">
 </form>
 
+<script>
+
+// https://stackoverflow.com/questions/14070105/pre-fill-form-field-via-url-in-html
+const hash = '?url=some_text&email=more%20text';
+const example12 = "http://example.com/" + hash;
+// for example .. below:  replace URL(window.location.href)) with URL(example12))
+
+(new URL(window.location.href)).searchParams.forEach((x, y) =>
+    document.getElementById(y).value = x);
+
+</script>
+
+
 {% endblock %}

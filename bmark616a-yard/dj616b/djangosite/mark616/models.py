@@ -1,7 +1,12 @@
 from django.db import models
 from django.urls import reverse
 
-
+def xstr(s):
+    if s is None:
+        return str('')
+    else:
+        return str(s)
+        
 class bookmk(models.Model):
 
     # Fields
@@ -16,8 +21,12 @@ class bookmk(models.Model):
     class Meta:
         pass
 
+
+            
     def __str__(self):
-        return str(self.pk)
+        # return str(self.pk)
+        return  str(self.id) + " - " + xstr(self.title) +  " - " + xstr(self.url) + " - "   + xstr(self.created_at)
+
 
     def get_absolute_url(self):
         return reverse("mark616_bookmk_detail", args=(self.pk,))
