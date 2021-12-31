@@ -60,7 +60,7 @@ services:
       driver: "json-file"
       options:
         max-size: "100k"
-        max-file: "15"
+        max-file: "10"
 
   lets:
     image: nginxproxy/acme-companion
@@ -81,6 +81,6 @@ services:
       driver: "json-file"
       options:
         max-size: "100k"
-        max-file: "15"
+        max-file: "10"
 
 

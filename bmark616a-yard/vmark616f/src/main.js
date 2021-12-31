@@ -9,7 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
-console.log('L12 env');
+console.log('L14e2q env');
 console.log(JSON.stringify(process.env, null, 2));
 
 /* eslint-disable no-new */
