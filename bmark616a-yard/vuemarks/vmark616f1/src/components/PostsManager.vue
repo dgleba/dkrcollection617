@@ -96,7 +96,10 @@ export default {
       this.loading = true // for original alert
       this.showoverlay = true // for overlay
         console.log("posts ~98");
+        console.log(JSON.stringify(this.posts));
       this.posts = await this.getPosts()
+        console.log("posts ~101 posts..");
+        console.log(JSON.stringify(this.posts));
       this.loading = false
       this.showoverlay = false
     },
@@ -143,8 +146,11 @@ export default {
         }
       })
       .then(req => {
-        console.log(data);
-        return req.data
+        console.log(JSON.stringify(this.posts));
+        console.log(JSON.stringify(data));
+        // error. [Vue warn]: Error in render: "TypeError: Cannot read properties of null (reading 'id')" 
+        // change return req.data to return req.data.results
+        return req.data.results
       })
       .catch(e => {
         console.log("posts ~147");

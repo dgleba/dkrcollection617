@@ -21,6 +21,7 @@ class Post(models.Model):
 
     class Meta:
         pass
+        ordering = ('-id',)    
 
     def __str__(self):
         return str(self.pk)
