@@ -36,7 +36,13 @@ import axios from 'axios'
       }
   },
   async created () {
-      // this.accessToken = localStorage.getItem("jwtToken");
+      this.accessToken = localStorage.getItem("jwtToken");
+      console.log(this.accessToken);
+      if (!this.accessToken) {
+          // User not logged in
+          this.$router.push({name: 'Login'});
+        } 
+
       // const instance = axios.create({
       //   baseURL:  `${process.env.VUE_APP_BACKEND_URL}`,
       //   timeout: 5000,
@@ -44,6 +50,7 @@ import axios from 'axios'
       //       Authorization: `Bearer ${this.accessToken}`
       //     }
       // });
+
   },
   methods: {
     addPost(){
@@ -69,5 +76,8 @@ import axios from 'axios'
 
 
   }
+
+
+
 }
 </script>

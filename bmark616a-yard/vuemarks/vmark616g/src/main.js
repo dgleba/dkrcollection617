@@ -38,8 +38,11 @@ const routes = [
     {
         name: 'posts',
         path: '/posts',
-        component: IndexComponent
-    },
+        component: IndexComponent,
+        meta: {
+            requiresAuth: true
+          }
+        },
     {
         name: 'edit',
         path: '/edit/:id',

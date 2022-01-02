@@ -19,9 +19,12 @@
           <router-link to="/login" class="nav-link">Login</router-link>
         </li>
         <li class="nav-item">  
-          <router-link to="/logout" class="nav-link">Logout</router-link>
+          
+          <a class="nav-link" href="#" @click.prevent="logout">Logouut</a>
         </li>
-        <li class="nav-item">  [ {{ this.activeUsername }} ]  </li>
+
+        <a class="navbar-brand"  href="#">  - -</a>
+        <p class="navbar-text justify-content-end ">[ {{ this.activeUsername }} ]</p> 
       </ul>
 
     </nav><br />
@@ -74,4 +77,11 @@ export default {
     }
   }
 }
+
+/*
+<router-link to="/logout" class="nav-link">Logout</router-link>
+<a class="navbar-brand" href="#">Always expand</a>
+        <li class="nav-item">  [ {{ this.activeUsername }} ]  </li>
+
+*/
 </script>
