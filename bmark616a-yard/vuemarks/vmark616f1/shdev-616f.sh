@@ -15,7 +15,7 @@ source ./.env
       -e "VIRTUAL_PORT=8080" \
       -e "LETSENCRYPT_EMAIL=dgleba@gmail.com" \
     --network=sister \
-    -it  $nodeimg sh -c "yarn serve"
+    -it  $nodeimg sh -c "npm run serve --public 198.23.238.244:8080"
 
 
 
