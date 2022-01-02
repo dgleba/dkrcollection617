@@ -5,7 +5,7 @@
               <div class="card-header">Home Component</div>
 
               <div class="card-body">
-                  I'm the Home Component component.
+                  vmark616g
               </div>
           </div>
       </div>
