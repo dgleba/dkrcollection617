@@ -1,3 +1,6 @@
+# db.sqlite3
+# db.sqlite3-journal
+# dist/
 
 x/
 sysdata/
@@ -20,7 +23,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -68,8 +70,6 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-# db.sqlite3
-# db.sqlite3-journal
 
 # Flask stuff:
 instance/
