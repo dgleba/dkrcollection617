@@ -13,9 +13,8 @@ class bookmkAdminForm(forms.ModelForm):
 
 class bookmkAdmin(admin.ModelAdmin):
     form = bookmkAdminForm
-    list_display = [
-        "bhash",
-        "description",
+    list_display = list_display_links = [
+        "id",
         "comment",
         "url",
         "title",
@@ -24,12 +23,15 @@ class bookmkAdmin(admin.ModelAdmin):
     ]
     readonly_fields = [
         "bhash",
-        "description",
-        "comment",
-        "url",
-        "title",
         "created_at",
         "updated_at",
+    ]
+    search_fields = [
+        "title",
+        "description",
+        'id',
+        "comment",
+        "url",
     ]
 
 

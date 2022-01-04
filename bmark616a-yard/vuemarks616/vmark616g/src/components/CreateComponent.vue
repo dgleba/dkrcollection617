@@ -38,10 +38,19 @@ import axios from 'axios'
   async created () {
       this.accessToken = localStorage.getItem("jwtToken");
       console.log(this.accessToken);
+
+      // Redirect to login if need be..
       if (!this.accessToken) {
           // User not logged in
           this.$router.push({name: 'Login'});
         } 
+
+      console.log("url=", this.$route.query.url)
+
+      // this.post.url=this.$route.query.url
+      this.post.title=this.$route.query.title
+      this.post.body=this.$route.query.description
+
 
       // const instance = axios.create({
       //   baseURL:  `${process.env.VUE_APP_BACKEND_URL}`,

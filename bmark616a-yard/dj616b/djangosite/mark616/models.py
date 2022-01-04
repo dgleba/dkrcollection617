@@ -20,9 +20,8 @@ class bookmk(models.Model):
 
     class Meta:
         pass
+        ordering = ('-id',)    
 
-
-            
     def __str__(self):
         # return str(self.pk)
         return  str(self.id) + " - " + xstr(self.title) +  " - " + xstr(self.url) + " - "   + xstr(self.created_at)

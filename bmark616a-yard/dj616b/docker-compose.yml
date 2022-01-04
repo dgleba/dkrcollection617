@@ -16,6 +16,7 @@ services:
     # problem is that they are read only for group www-data. Use make perm to make them writable.
     user: "0:33"
     env_file:
+      # .env.dev sets debug=True
       - ./.env.dev
       - ./.env
     # entrypoint: sh /code/entrypoint.sh

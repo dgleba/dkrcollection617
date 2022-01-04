@@ -17,8 +17,8 @@ services:
     expose:
       - "80"
     volumes:
-      # - ./docker/nginx_listoa/nginxmain.conf:/etc/nginx/nginx.conf
-      # - ./docker/nginx_listoa/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginx_616g/nginxmain.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx_616g/default.conf:/etc/nginx/conf.d/default.conf
       - ./vmark616g/dist:/usr/share/nginx/html
     restart: always
     networks:

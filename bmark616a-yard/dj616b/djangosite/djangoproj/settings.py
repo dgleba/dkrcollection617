@@ -61,6 +61,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://\w+\.jgleba\.com$",
+    r"^https://.*.198.23.238.244.nip.io.*",
     r"^http://192.168.*",
 ]
 CORS_ALLOWED_ORIGINS = [
