@@ -19,7 +19,7 @@ RUN yarn global add @vue/cli -g
 EXPOSE 80
 # If yout want use vue-cli UI you need to also EXPORT 8000 
 
-USER node
+# USER node
 
 # switch to npm if you chose it as package manager
 CMD ["yarn", "serve"]
