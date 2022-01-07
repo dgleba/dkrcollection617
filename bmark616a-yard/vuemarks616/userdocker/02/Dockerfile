@@ -1,12 +1,9 @@
 FROM node:16-slim
 
-# not mandatory if you EXPORT a fixed port. See below.
-# ARG YOUR_APP_WEB_HTTP_PORT
-
 # RUN apt-get -y update \
 # 	&& apt-get install -y curl
 
-RUN yarn global add @vue/cli -g
+# RUN yarn global add @vue/cli -g
 
 # WORKDIR /path/in/container/your-app
 
@@ -16,10 +13,18 @@ RUN yarn global add @vue/cli -g
 #     && rm -rf /var/lib/apt/lists/*
 
 # Or just use EXPORT 8080
-EXPOSE 80
+# EXPOSE 80
 # If yout want use vue-cli UI you need to also EXPORT 8000 
 
-# USER node
+
+USER node
+
+RUN mkdir -p /home/node/code
+WORKDIR /home/node/code
+
+# RUN mkdir -p /home/node  \
+#     && chown -R 1000:33 /home/node
+
 
 # switch to npm if you chose it as package manager
 CMD ["yarn", "serve"]
