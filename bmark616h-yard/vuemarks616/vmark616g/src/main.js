@@ -17,48 +17,89 @@ import CreateComponent from './components/CreateComponent.vue';
 import IndexComponent from './components/IndexComponent.vue';
 import EditComponent from './components/EditComponent.vue';
 
+import BookmkIndexComponent from './components/BookmkIndexComponent.vue';
+import BookmkCreateComponent from './components/BookmkCreateComponent.vue';
+
 import Login from "@/components/Login";
 import Register from "@/components/Register";
 
 
 const routes = [
-    {
-        name: 'home',
-        path: '/',
-        component: HomeComponent
-    },
-    {
-        name: 'create',
-        path: '/create',
+  {
+    path: "/login",
+    name: "Login",
+    component: Login
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register
+  },
+
+  {
+    name: 'home',
+    path: '/',
+    component: HomeComponent
+  },
+
+  {
+    name: 'marks',
+      path: '/marks',
+        component: BookmkIndexComponent,
+          meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    name: 'markcreate',
+      path: '/markcreate',
+        component: BookmkCreateComponent,
+          meta: {
+      requiresAuth: true
+    }
+  },
+
+  {
+    name: 'create',
+      path: '/create',
         component: CreateComponent,
-        meta: {
-            requiresAuth: true
-          }
-    },
-    {
-        name: 'posts',
-        path: '/posts',
+          meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    name: 'posts',
+      path: '/posts',
         component: IndexComponent,
-        meta: {
-            requiresAuth: true
-          }
-        },
-    {
-        name: 'edit',
-        path: '/edit/:id',
+          meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    name: 'edit',
+      path: '/edit/:id',
         component: EditComponent
-    },
-    {
-        path: "/login",
-        name: "Login",
-        component: Login
-      },
-      {
-        path: "/register",
-        name: "Register",
-        component: Register
-      }
+  }
 ];
+
+
+/*
+  Determine if browser supports a Service Worker,
+  if so, register it for the PWA
+  from unmark  ./assets/js/unmark.pwa.js:3:  
+*/
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      //console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
 
 const router = new VueRouter({ mode: 'history', routes: routes });
 

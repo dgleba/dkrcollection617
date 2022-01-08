@@ -9,6 +9,7 @@
 mm:
 	docker-compose run --rm djdev python manage.py makemigrations mark616
 	# docker-compose run --rm djdev python manage.py makemigrations blogapp
+	docker-compose run --rm djdev python manage.py migrate
 
 mig:
 	docker-compose run --rm djdev python manage.py migrate

@@ -9,7 +9,7 @@ source ./.env
 
 # run developmet (dev) server:
 
-  docker run --name sh-dev_vmark616fdev_021 --rm -v "${PWD}:/$(basename `pwd`)" -w "/$(basename `pwd`)" -p $devport:8081  \
+  docker run --name sh-dev_vmark616-g-dev_021 --rm -v "${PWD}:/$(basename `pwd`)" -w "/$(basename `pwd`)" -p $devport:8081  \
       -e     "VIRTUAL_HOST=vmark616devg.198.144.183.160.nip.io" \
       -e "LETSENCRYPT_HOST=vmark616devg.198.144.183.160.nip.io" \
       -e "VIRTUAL_PORT=8081" \

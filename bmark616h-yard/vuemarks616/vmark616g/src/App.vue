@@ -6,10 +6,10 @@
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/create" class="nav-link">Create Post</router-link>
+          <router-link to="/markcreate" class="nav-link">Create</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/posts" class="nav-link">Posts</router-link>
+          <router-link to="/marks" class="nav-link">Bmarks</router-link>
         </li>
         <!-- <li class="nav-item">
            <b-nav-item >  [ {{ this.activeUsername }} ]  </b-nav-item> 

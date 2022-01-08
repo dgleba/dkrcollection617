@@ -10,11 +10,12 @@ def xstr(s):
 class bookmk(models.Model):
 
     # Fields
-    title = models.CharField(max_length=3430, blank=True, null=True)
-    description = models.TextField(max_length=32100, blank=True, null=True)
+    title = models.CharField(max_length=6430, blank=True, null=True)
+    body = models.TextField(max_length=32100, blank=True, null=True)
     url = models.TextField(max_length=30100, blank=True, null=True)
-    bhash = models.CharField(max_length=230, blank=True, null=True)
+    bhash = models.CharField(max_length=1930, blank=True, null=True)
     comment = models.TextField(max_length=31200, blank=True, null=True)
+    description = models.TextField(max_length=32100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
