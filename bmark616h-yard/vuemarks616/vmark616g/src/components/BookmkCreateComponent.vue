@@ -61,7 +61,7 @@ import axios from 'axios'
       // Get query parameters from the url or the android pwa share_target in manifest.json
       // 
       //
-      if  (this.$route.query.sourcei.includes('pwa')) {
+      if(this.$route.query.sourcei.trim() === 'pwa') {
         this.bookmk.title=this.$route.query.title
         this.bookmk.body=this.$route.query.description
         // url in android chrome comes as item `text`
