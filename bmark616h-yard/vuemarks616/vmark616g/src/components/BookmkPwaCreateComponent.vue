@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Create Bookmark616</h3>
+    <h3>Create Bookmark616 (pwa)</h3>
     <form @submit.prevent="addBookmk">
       <div class="row">
         <div class="col-md-6">
@@ -71,7 +71,8 @@ import axios from 'axios'
       else {
         this.bookmk.title=this.$route.query.title
         this.bookmk.body=this.$route.query.description
-        this.bookmk.url=this.$route.query.url
+        // Change to text for now as sourcei not working..
+        this.bookmk.url=this.$route.query.text
       }
 
       // https://chodounsky.com/2019/03/24/progressive-web-application-as-a-share-option-in-android/

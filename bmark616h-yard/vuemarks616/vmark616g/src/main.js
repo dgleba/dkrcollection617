@@ -19,6 +19,7 @@ import EditComponent from './components/EditComponent.vue';
 
 import BookmkIndexComponent from './components/BookmkIndexComponent.vue';
 import BookmkCreateComponent from './components/BookmkCreateComponent.vue';
+import BookmkPwaCreateComponent from './components/BookmkPwaCreateComponent.vue';
 
 import Login from "@/components/Login";
 import Register from "@/components/Register";
@@ -54,6 +55,14 @@ const routes = [
     name: 'markcreate',
       path: '/markcreate',
         component: BookmkCreateComponent,
+          meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    name: 'pwamarkcreate',
+      path: '/pwamarkcreate',
+        component: BookmkPwaCreateComponent,
           meta: {
       requiresAuth: true
     }

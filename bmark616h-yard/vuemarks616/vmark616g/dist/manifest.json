@@ -1,7 +1,7 @@
 {
   "short_name": "Mark616",
   "name": "Mark616",
-  "dglebareference": "from unmark 2022-01-07 ver 12",
+  "dglebareference": "from unmark 2022-01-07 ver 18",
   "icons": [
     {
       "src": "/appimages/android-chrome-192x192.png",
@@ -11,11 +11,11 @@
 
   ],
   "share_target": {
-    "action": "/markcreate/",
+    "action": "/pwamarkcreate/",
     "params": {
       "title": "title",
       "text": "text",
-      "url": "url"
+      "url": "text"
     }
   },
   "start_url": "/?sourcei=pwa",
