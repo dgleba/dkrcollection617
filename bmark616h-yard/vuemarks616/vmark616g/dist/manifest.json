@@ -1,28 +1,25 @@
 {
   "short_name": "Mark616",
   "name": "Mark616",
-  "dglebareference": "from unmark 2022-01-07",
+  "dglebareference": "from unmark 2022-01-07 ver 12",
   "icons": [
     {
-      "src": "/appimages/android/android-launchericon-192-192.png",
+      "src": "/appimages/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "/appimages/android/android-launchericon-512-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
+
   ],
   "share_target": {
     "action": "/markcreate/",
     "params": {
-      "url": "url",
       "title": "title",
-      "text": "body"
+      "text": "text",
+      "url": "url"
     }
   },
-  "start_url": "/?source=pwa",
+  "start_url": "/?sourcei=pwa",
+  "id": "/?sourcei=pwa",
   "background_color": "#13293d",
   "display": "standalone",
   "orientation": "portrait",

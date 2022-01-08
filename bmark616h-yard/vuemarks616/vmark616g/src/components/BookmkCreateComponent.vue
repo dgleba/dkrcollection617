@@ -54,14 +54,32 @@ import axios from 'axios'
         } 
 
       console.log("url=", this.$route.query.url)
+      console.log("text=", this.$route.query.text)
+      console.log("sourcei=", this.$route.query.sourcei)
 
       //
-      // Get query parameters from the url 
+      // Get query parameters from the url or the android pwa share_target in manifest.json
       // 
       //
-      this.bookmk.title=this.$route.query.title
-      this.bookmk.body=this.$route.query.description
-      this.bookmk.url=this.$route.query.url
+      if  (this.$route.query.sourcei.includes('pwa')) {
+        this.bookmk.title=this.$route.query.title
+        this.bookmk.body=this.$route.query.description
+        // url in android chrome comes as item `text`
+        // this.bookmk.url=this.$route.query.text
+        this.bookmk.url=this.$route.query.text
+        }
+      else {
+        this.bookmk.title=this.$route.query.title
+        this.bookmk.body=this.$route.query.description
+        this.bookmk.url=this.$route.query.url
+      }
+
+      // https://chodounsky.com/2019/03/24/progressive-web-application-as-a-share-option-in-android/
+      var parsedUrl = new URL(window.location.toString());
+      console.log('Title shared: ' + parsedUrl.searchParams.get('name'));
+      console.log('Text shared: ' + parsedUrl.searchParams.get('description'));
+      console.log('URL shared: ' + parsedUrl.searchParams.get('link'));
+      console.log('URL shared: ' + parsedUrl.searchParams.get('text'));
 
 
       // const instance = axios.create({
@@ -94,11 +112,7 @@ import axios from 'axios'
       });
     }
 
-
-
   }
-
-
 
 }
 </script>

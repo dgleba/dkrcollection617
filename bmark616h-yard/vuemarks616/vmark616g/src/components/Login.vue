@@ -61,7 +61,7 @@ export default {
           localStorage.setItem("jwtusername", this.username);
           console.log(this.$router.history);
           this.$router.push({
-            name: 'create',
+            name: 'markcreate',
           });
         })
         .catch((e) => {
