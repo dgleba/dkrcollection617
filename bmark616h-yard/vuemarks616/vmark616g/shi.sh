@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 # see .env for vars..
     # export nodeimg='node:14.15-slim'
@@ -15,6 +15,8 @@ source ./.env
 
 #docker run --rm -v "${PWD}:/$(basename `pwd`)" -w "/$(basename `pwd`)" -p $devport:8080 -it  $nodeimg sh -c "vue add pwa"
 
-docker run --rm -v "${PWD}:/$(basename `pwd`)" -w "/$(basename `pwd`)" -p $devport:8080 -it  $nodeimg sh -c "npm i"
+docker run --rm -v "${PWD}:/$(basename `pwd`)" -w "/$(basename `pwd`)" -it  $nodeimg sh -c "npm i --save dayjs"
+
+# docker run --rm -v "${PWD}:/$(basename `pwd`)" -w "/$(basename `pwd`)"  -it  $nodeimg sh -c "npm i"
 
 

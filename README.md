@@ -34,15 +34,15 @@ See upprod.sh for dev section.
 cd /ap/dkr/dkrcollection617
 cd ./bmark616h-yard/vuemarks616/vmark616g/
 
-dev vue:
+# dev vue:
 
         bash shdev.sh
 
-build for production:
+# build for production:
 
         bash shb.sh; docker-compose down; docker-compose up
 
-npm install:
+# npm install:
 
         bash shi.sh
 
