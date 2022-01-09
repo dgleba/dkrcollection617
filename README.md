@@ -50,6 +50,12 @@ cd ./bmark616h-yard/vuemarks616/vmark616g/
 bash sh.sh
 ```
 
+# Change version in ...
+
+BookmkIndexComponent.vue
+public/service.worker.js
+public/manifest.json
+
 
 # layout
 
