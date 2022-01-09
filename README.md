@@ -4,9 +4,56 @@
 Bookmarking and notes system
 
 
+
+# Stop all
+
+```
+cd /ap/dkr/dkrcollection617
+
+bash sdownall.sh
+
+cd proxy457h; docker-compose down
+
+```
+
+# Start production
+
+```
+bash upprod.sh
+
+cd proxy457h; docker-compose up
+
+```
+
+# development
+
+See upprod.sh for dev section.
+
+```
+
+cd /ap/dkr/dkrcollection617
+cd ./bmark616h-yard/vuemarks616/vmark616g/
+
+dev vue:
+
+        bash shdev.sh
+
+build for production:
+
+        bash shb.sh; docker-compose down; docker-compose up
+
+npm install:
+
+        bash shi.sh
+
+
+bash sh.sh
+```
+
+
 # layout
 
-
+```
 albe@racknerd-4f4016:/ap/dkr/dkrcollection617$ tree -L 3
 
 ├── bmark616h-yard
@@ -43,5 +90,5 @@ ssl proxy..
 ├── proxy457h
 │   ├── docker-compose.yml
 
-
+```
 

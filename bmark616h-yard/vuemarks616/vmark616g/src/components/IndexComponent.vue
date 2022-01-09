@@ -19,7 +19,7 @@
       <tbody>
         <tr v-for="post in posts" :key="post._id">
           <td>{{ post.title }}</td>
-          <td>{{ post.body }}</td>
+          <td>{{ rmpunctuation(post.body) }}</td>
           <td><router-link :to="{ name: 'edit', params: { id: post.id } }" class="btn btn-primary">Edit</router-link></td>
           <td><button class="btn btn-danger" @click.prevent="deletePost(post._id)">Delete</button></td>
         </tr>
@@ -71,6 +71,12 @@ export default {
         this.posts.splice(this.posts.indexOf(id), 1);
       });
     },
+    rmpunctuation(ss) {
+      return  ss.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"");
+    },
+    
+
+
   },
 };
 </script>

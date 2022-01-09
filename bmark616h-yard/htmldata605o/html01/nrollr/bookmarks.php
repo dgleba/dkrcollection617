@@ -17,7 +17,7 @@
 		<?php
 			include "include/connect.php";
 
-			$sql = "SELECT * FROM `bookmarks` ORDER BY id DESC LIMIT 50";
+			$sql = "SELECT * FROM `nrollr_bookmarks` ORDER BY id DESC LIMIT 50";
 			$query = mysqli_query($link,$sql);
 			while ($row=mysqli_fetch_assoc($query)) {
 				echo '<a class="item" href="'.$row['url'].'"><i class="right triangle icon"></i>';

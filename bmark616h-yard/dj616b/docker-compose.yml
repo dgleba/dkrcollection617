@@ -44,7 +44,6 @@ services:
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
 
 
-
   # adminerd:
   #   # http://192.168.88.60:14123/
   #   # http://10.4.1.231:6117/

@@ -39,7 +39,7 @@
 				$_title = mysqli_real_escape_string($link, $_REQUEST['title']);
 				$_descr = mysqli_real_escape_string($link, $_REQUEST['descr']);
 
-				$query = "INSERT INTO `bookmarks` (hash, url,title) VALUES ('".md5($_url)."','".$_url."','".$_title."')";
+				$query = "INSERT INTO `nrollr_bookmarks` (hash, url,title) VALUES ('".md5($_url)."','".$_url."','".$_title."')";
 				if(mysqli_query($link, $query)){
 					echo '<script language="javascript">';
 					echo 'window.location.href="bookmarks.php";';

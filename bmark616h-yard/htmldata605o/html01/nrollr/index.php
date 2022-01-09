@@ -12,7 +12,7 @@
 	<i class="close icon"></i>
 	<div class="ui breadcrumb">
 		<!-- If not running on localhost, define the correct URL ! -->
-		<a class="section" href="javascript:window.location=%22https://php.198.23.238.244.nip.io/nrollr/load.php?url=%22+encodeURIComponent(document.location)+%22&title=%22+encodeURIComponent(document.title)">
+		<a class="section" href="javascript:window.location=%22https://php.198.144.183.160.nip.io/nrollr/load.php?url=%22+encodeURIComponent(document.location)+%22&title=%22+encodeURIComponent(document.title)">
 		<i class="bookmark icon"></i>Bookmark!</a><i class="right angle icon divider"></i>
 		<div class="section">Drag and drop the icon in your bookmarks bar + click the icon to bookmark a webpage in your local bookmark repository.</div>
 	</div>

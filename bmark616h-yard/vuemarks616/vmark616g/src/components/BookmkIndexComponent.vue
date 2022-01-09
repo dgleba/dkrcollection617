@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-10"><h3>Bookmks</h3></div>
+      <div class="col-md-10"><h5>Bookmks v-19</h5></div>
       <div class="col-md-2">
-        <router-link :to="{ name: 'markcreate' }" class="btn btn-primary">Create Bookmk</router-link>
+        <router-link :to="{ name: 'markcreate' }" class="btn btn-success">Create</router-link>
       </div>
     </div>
     <br />
@@ -19,12 +19,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="bookmk in bookmks" :key="bookmk._id">
+        <tr v-for="bookmk in bookmks" :key="bookmk.id">
           <td>{{ bookmk.title }}</td>
           <td>{{ bookmk.url }}</td>
           <td>{{ bookmk.body }}</td>
           <td>{{ bookmk.created_at }}</td>
-          <td><router-link :to="{ name: 'edit', params: { id: bookmk._id } }" class="btn btn-primary">Edit</router-link></td>
+          <td><router-link :to="{ name: 'edit', params: { id: bookmk.id } }" class="btn btn-primary">Edit</router-link></td>
           <!-- <td><button class="btn btn-danger" @click.prevent="deleteBookmk(bookmk._id)">Delete</button></td> -->
         </tr>
       </tbody>
@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       bookmks: [],
+      nopunc:''
     };
   },
   created() {
@@ -75,6 +76,14 @@ export default {
         this.bookmks.splice(this.bookmks.indexOf(id), 1);
       });
     },
+    
+    rmpunctuation(ss) {
+      this.nopunc =  ss.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"");
+      console.log(ss, this.nopunc);
+      return this.nopunc;
+    },
+    
+
   },
 };
 </script>

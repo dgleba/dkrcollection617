@@ -5,7 +5,7 @@
               <div class="card-header">Home Component</div>
 
               <div class="card-body">
-                  vmark616g  Version 18
+                  vmark616g  
               </div>
           </div>
       </div>
