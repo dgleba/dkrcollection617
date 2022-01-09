@@ -28,7 +28,7 @@
       </div>
       <br />
       <div class="form-group">
-        <button class="btn btn-primary">Create</button>
+        <button class="btn btn-primary btn-lg">Create</button>
       </div>
     </form>
   </div>

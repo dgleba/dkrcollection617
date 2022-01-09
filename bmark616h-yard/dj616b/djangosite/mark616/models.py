@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.template.defaultfilters import truncatechars  # or truncatewords
 
 def xstr(s):
     if s is None:
@@ -22,6 +23,11 @@ class bookmk(models.Model):
     class Meta:
         pass
         ordering = ('-id',)    
+
+    @property
+    def model_short_url(self):
+        return truncatechars(self.url, 70)
+
 
     def __str__(self):
         # return str(self.pk)

@@ -87,47 +87,47 @@ admin2.index_title = "blog.bg2"
 
 # =================================================
 
-class ApplicationAdmin(admin.ModelAdmin):
-    autocomplete_fields  = [
-        "vehicles"
-    ]
+# class ApplicationAdmin(admin.ModelAdmin):
+#     autocomplete_fields  = [
+#         "vehicles"
+#     ]
 
-class VehicleAdmin(admin.ModelAdmin):
-    # ordering = ['date_created']
-    search_fields = [
-        "vehicle_maker",
-        "vehicle_model",
-    ]
+# class VehicleAdmin(admin.ModelAdmin):
+#     # ordering = ['date_created']
+#     search_fields = [
+#         "vehicle_maker",
+#         "vehicle_model",
+#     ]
 
-admin.site.register(models.Vehicle, VehicleAdmin)
-admin.site.register(models.Application, ApplicationAdmin)
-
-# =================================================
-
+# admin.site.register(models.Vehicle, VehicleAdmin)
+# admin.site.register(models.Application, ApplicationAdmin)
 
 # =================================================
 
-class Application2Admin(admin.ModelAdmin):
-    ordering = ['-created_at']
-    search_fields = [
-        "source",
-        "application",
-        "pts_topology",
-    ]
-    actions = None
 
-class Vehicle2Admin(admin.ModelAdmin):
-    ordering = ['-id']
-    autocomplete_fields  = [
-        "application2s"
-    ]
+# =================================================
 
-# admin.site.register(models.Vehicle2, Vehicle2Admin)
-# admin.site.register(models.Application2, Application2Admin)
+# class Application2Admin(admin.ModelAdmin):
+#     ordering = ['-created_at']
+#     search_fields = [
+#         "source",
+#         "application",
+#         "pts_topology",
+#     ]
+#     actions = None
 
-# place these on admin2
-admin2.register(models.Vehicle2, Vehicle2Admin)
-admin2.register(models.Application2, Application2Admin)
+# class Vehicle2Admin(admin.ModelAdmin):
+#     ordering = ['-id']
+#     autocomplete_fields  = [
+#         "application2s"
+#     ]
+
+# # admin.site.register(models.Vehicle2, Vehicle2Admin)
+# # admin.site.register(models.Application2, Application2Admin)
+
+# # place these on admin2
+# admin2.register(models.Vehicle2, Vehicle2Admin)
+# admin2.register(models.Application2, Application2Admin)
 
 
 # =================================================

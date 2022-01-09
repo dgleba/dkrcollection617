@@ -7,8 +7,10 @@ class bookmkForm(forms.ModelForm):
         model = models.bookmk
         fields = [
             "bhash",
+            "body",
             "description",
             "comment",
             "url",
             "title",
         ]
+

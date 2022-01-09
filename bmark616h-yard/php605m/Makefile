@@ -7,6 +7,12 @@
 #
 
 
+#
+# dump all data
+#
+dump:
+	docker-compose  exec dbm bash /script/all-individual-mysqldump.sh
+
 
 nukedb:
 	docker-compose    run --rm dbm bash -c "rm -rf /var/lib/mysql/*"
@@ -47,19 +53,6 @@ umasktest:
 	docker-compose  -f docker-compose.devtest.yml  run djangodev  django-admin.py startproject myproject .
 
   
-
-# clean docker containers 
-#
-clean:   
-	# remove this one.. 
-	-docker rmi dkr382r-django_djangodev
-  # remove docker containers exited 
-	-docker rm $$(docker ps -qa --no-trunc --filter "status=exited") 
-	# remove tagged <none> 
-	-docker rmi $$(docker images | grep "^<none>" | awk '{ print $3 }') 
-	-docker network rm $(docker network ls | grep "bridge" | awk '/ / { print $1 }')
-
-
 #
 dkv: 
 	docker --version
