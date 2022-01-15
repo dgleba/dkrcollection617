@@ -14,6 +14,7 @@ class bookmk(models.Model):
     title = models.CharField(max_length=6430, blank=True, null=True)
     body = models.TextField(max_length=32100, blank=True, null=True)
     url = models.TextField(max_length=30100, blank=True, null=True)
+    tagtext = models.CharField(max_length=1930, blank=True, null=True)
     bhash = models.CharField(max_length=1930, blank=True, null=True)
     comment = models.TextField(max_length=31200, blank=True, null=True)
     description = models.TextField(max_length=32100, blank=True, null=True)

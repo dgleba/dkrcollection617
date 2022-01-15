@@ -8,6 +8,15 @@
     </div>
     <br />
 
+    <ul v-if="t_errors && t_errors.length">
+      <li v-for="t_error of t_errors" v-bind:key="t_error">
+        <!-- <alert show>{{ t_error.message }}</alert> -->
+        <div class="alert alert-warning" role="alert">
+            <!-- show> -->{{ t_error.message }}
+        </div>
+      </li>
+    </ul>
+
     <table class="table table-hover">
       <thead>
         <tr>
@@ -40,7 +49,8 @@ export default {
   data() {
     return {
       bookmks: [],
-      nopunc:''
+      nopunc:'',
+      t_errors: [],
     };
   },
   created() {
@@ -67,6 +77,7 @@ export default {
     })
     .catch(function (error) {
       console.log(error);
+      this.t_errors.push(error);
     })
     .then(() => {
       this.$router.push({name: 'marks'});
@@ -81,12 +92,12 @@ export default {
     },
     truncateclean: function(text, length, suffix) {
       text = text || "."; // ref. https://github.com/imcvampire/vue-truncate-filter/issues/10 - fails on null
-      text =  text.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g," ");
+      text =  text.replace(/([.,/#+!$%^&*;:{}=\-_`~()])/g,"$1 ");
       return text.substring(0, length) + suffix;
     },
     truncatepunc: function(text, length, suffix) {
       text = text || "."; // ref. https://github.com/imcvampire/vue-truncate-filter/issues/10 - fails on null
-      text =  text.replace(/\s*([,.!?:;]+)(?!\s*$)\s*/g, '$1 ');
+      text =  text.replace(/\s*([,=/&_~.$+!?:;-]+)(?!\s*$)\s*/g, '$1 ');
       return text.substring(0, length) + suffix;
     },
     // format date

@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+date1=$(date +"__%Y.%m.%d_%H.%M.%S"); echo $date1
+
+# build
+
+cd /ap/dkr/dkrcollection617a
+cd ./bmark616h-yard/vuemarks616/vmark616g
+# source  shb.sh
+
+
+# restart
+
+cd /ap/dkr/dkrcollection617a
+
+# error docker-compose -f ./bmark616h-yard/vuemarks616/docker-compose.yml restart
+# Cannot restart container 5919c281253acfc67a5ce6a7a36f1817299340551de0f5bdc2c33d9bfc239d46: OCI runtime create failed: container_linux.go:380: starting container process caused: process_linux.go:545: container init caused: rootfs_linux.go:76: mounting "/ap/dkr/dkrcollection617/bmark616h-yard/vuemarks616/docker/nginx_616g/nginxmain.conf" to rootfs at "/etc/nginx/nginx.conf" caused: mount through procfd: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+
+docker-compose -f ./bmark616h-yard/vuemarks616/docker-compose.yml stop
+docker-compose -f ./bmark616h-yard/vuemarks616/docker-compose.yml up -d vmg
+
+
+
+
+# notes
+
+notes01() {
+
+docker-compose -f ./bmark616h-yard/php605m/docker-compose.yml     up -d dbm 
+
+docker-compose -f ./bmark616h-yard/dj616b/docker-compose.prod.yml up -d djprod 
+
+docker-compose -f ./bmark616h-yard/vuemarks616/docker-compose.yml up -d vmg
+
+
+# dev
+docker-compose -f ./bmark616h-yard/php605m/docker-compose.yml     up -d adminer php
+
+docker-compose -f ./bmark616h-yard/dj616b/docker-compose.yml      up -d 
+
+cd /ap/dkr/dkrcollection617a
+cd ./bmark616h-yard/vuemarks616/vmark616g
+bash shdev.sh
+
+}
+
+echo
+echo '--- :) --- finished. reached end.'
+echo

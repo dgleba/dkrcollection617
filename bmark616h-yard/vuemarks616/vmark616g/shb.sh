@@ -4,6 +4,8 @@
     # export proj=vue-eg-552cfab
     # export devport=14331
 
+set -vx
+
 source ./.env
 
 # install..

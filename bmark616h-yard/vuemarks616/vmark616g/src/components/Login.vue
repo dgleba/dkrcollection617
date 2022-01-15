@@ -4,7 +4,10 @@
 
     <ul v-if="t_errors && t_errors.length">
       <li v-for="t_error of t_errors" v-bind:key="t_error">
-        <alert show>{{ t_error.message }}</alert>
+        <!-- <alert show>{{ t_error.message }}</alert> -->
+        <div class="alert alert-warning" role="alert">
+            <!-- show> -->{{ t_error.message }}
+        </div>
       </li>
     </ul>
 

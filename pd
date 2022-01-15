@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+date1=$(date +"__%Y.%m.%d_%H.%M.%S"); echo $date1
+
+# restart django prod docker.
+
+cd /ap/dkr/dkrcollection617a
+
+docker-compose -f ./bmark616h-yard/dj616b/docker-compose.prod.yml down  
+
+docker-compose -f ./bmark616h-yard/dj616b/docker-compose.prod.yml up -d djprod 
+
+echo
+echo '--- :) --- finished. reached end.'
+echo

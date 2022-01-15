@@ -20,6 +20,7 @@ class bookmkAdmin(admin.ModelAdmin):
         "short_title",
         "short_url",
         "short_body",
+        "tagtext",
         "created_at",
         # "updated_at",
     ]
@@ -58,6 +59,8 @@ class bookmkAdmin(admin.ModelAdmin):
         # "updated_at",
     ]
 
+    exclude = ('description',)
+
     readonly_fields = [
         "bhash",
         "created_at",
@@ -67,7 +70,7 @@ class bookmkAdmin(admin.ModelAdmin):
         "url",
         "title",
         "body",
-        "description",
+        "tagtext",
         'id',
         "comment",
     ]
