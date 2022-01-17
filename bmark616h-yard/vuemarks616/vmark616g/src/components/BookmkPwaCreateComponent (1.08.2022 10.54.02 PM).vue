@@ -1,15 +1,6 @@
 <template>
   <div>
-    <h3>Create Bookmark616</h3>
-
-    <ul v-if="t_errors && t_errors.length">
-      <li v-for="t_error of t_errors" v-bind:key="t_error">
-        <!-- <alert show>{{ t_error.message }}</alert> -->
-        <div class="alert alert-warning" role="alert"><!-- show> -->{{ t_error.message }}</div>
-      </li>
-    </ul>
-
-
+    <h3>Create Bookmark616 (pwa)</h3>
     <form @submit.prevent="addBookmk">
       <div class="row">
         <div class="col-md-6">
@@ -44,43 +35,15 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 
   export default {
       data(){
       return {
-        bookmk:{},
-        t_errors: [],
+        bookmk:{}
       }
   },
   async created () {
-
-
-    // from index..
-    this.accessToken = localStorage.getItem("jwtToken");
-    let uri = `${process.env.VUE_APP_BACKEND_URL}/mark616/api/v1/bookmk/`;
-    this.axios({
-      method: "get",
-      url: uri,
-      headers: {
-        Authorization: `Bearer ${this.accessToken}`,
-      },
-    })
-      .then((response) => {
-        this.bookmks = response.data.results;
-        console.log("res data resu", response.data.results);
-      })
-      .catch((e) => {
-        console.log("error e=", e);
-        this.t_errors.push(e);
-                this.$router.push({ name: "marks" });
-      })
-      .then(() => {
-        // do nothing. continue
-      });
-
-    // create record..
-
       this.accessToken = localStorage.getItem("jwtToken");
       console.log(this.accessToken);
 
@@ -108,7 +71,8 @@
       else {
         this.bookmk.title=this.$route.query.title
         this.bookmk.body=this.$route.query.description
-        this.bookmk.url=this.$route.query.url
+        // Change to text for now as sourcei not working..
+        this.bookmk.url=this.$route.query.text
       }
 
       // https://chodounsky.com/2019/03/24/progressive-web-application-as-a-share-option-in-android/

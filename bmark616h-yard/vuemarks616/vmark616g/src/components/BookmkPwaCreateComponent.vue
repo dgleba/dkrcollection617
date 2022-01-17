@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
   export default {
       data(){
@@ -71,7 +71,9 @@ import axios from 'axios'
       else {
         this.bookmk.title=this.$route.query.title
         this.bookmk.body=this.$route.query.description
+
         // Change to text for now as sourcei not working..
+        
         this.bookmk.url=this.$route.query.text
       }
 

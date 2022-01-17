@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-10"><h5>Bookmks v-21</h5></div>
+      <div class="col-md-10"><h5>Bookmks v-22</h5></div>
       <div class="col-md-2">
         <router-link :to="{ name: 'markcreate' }" class="btn btn-success">Create</router-link>
       </div>
@@ -33,7 +33,7 @@
           <td>{{ bookmk.title | truncatepunc(100, '')  }}</td>
           <td>{{ bookmk.url | truncatepunc(100, '') }}</td>
           <td>{{ bookmk.body | truncatepunc(100, '')  }}</td>
-          <td><router-link :to="{ name: 'edit', params: { id: bookmk.id } }" class="btn btn-primary">Edit</router-link></td>
+          <!-- <td><router-link :to="{ name: 'edit', params: { id: bookmk.id } }" class="btn btn-primary">Edit</router-link></td> -->
           <!-- <td><button class="btn btn-danger" @click.prevent="deleteBookmk(bookmk._id)">Delete</button></td> -->
         </tr>
       </tbody>
