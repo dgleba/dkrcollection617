@@ -19,12 +19,15 @@ devup() {
 docker-compose -f ./bmark616h-yard/php605m/docker-compose.yml     up -d adminer php
 
 #django dev
+
 docker-compose -f ./bmark616h-yard/dj616b/docker-compose.yml      up -d 
+
+
+# dev vue
 
 cd /ap/dkr/dkrcollection617
 cd ./bmark616h-yard/vuemarks616/vmark616g
 bash shdev.sh
 
 }
-
 

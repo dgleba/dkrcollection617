@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+date1=$(date +"__%Y.%m.%d_%H.%M.%S"); echo $date1
+
+cd /ap/dkr/dkrcollection617
+cd ./bmark616h-yard/vuemarks616/vmark616g
+bash shdev.sh
+
+echo
+echo '--- :) --- finished. reached end.'
+echo

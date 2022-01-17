@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-10"><h5>Bookmks v-20</h5></div>
+      <div class="col-md-10"><h5>Bookmks v-21</h5></div>
       <div class="col-md-2">
         <router-link :to="{ name: 'markcreate' }" class="btn btn-success">Create</router-link>
       </div>
@@ -20,19 +20,19 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>Created</th>
           <th>Title</th>
           <th>URL</th>
           <th>Body</th>
-          <th>Created</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="bookmk in bookmks" :key="bookmk.id">
+          <td>{{ bookmk.created_at  | dateformat2() }}</td>
           <td>{{ bookmk.title | truncatepunc(100, '')  }}</td>
           <td>{{ bookmk.url | truncatepunc(100, '') }}</td>
           <td>{{ bookmk.body | truncatepunc(100, '')  }}</td>
-          <td>{{ bookmk.created_at  | dateformat2() }}</td>
           <td><router-link :to="{ name: 'edit', params: { id: bookmk.id } }" class="btn btn-primary">Edit</router-link></td>
           <!-- <td><button class="btn btn-danger" @click.prevent="deleteBookmk(bookmk._id)">Delete</button></td> -->
         </tr>
@@ -71,13 +71,21 @@ export default {
     )
     .then((response) => {
       this.bookmks = response.data.results;
+            console.log("res data resu", response.data.results);
       })
-    .then(function (response) {
-      console.log(response);
+    // .then(function (response) {
+    //   console.log("resp", response);
+    // })
+    // .catch(function (error) {
+    //   console.log("terror",error);
+    //   this.t_errors.push(error);
+    // })
+    .then((res) => {
+      console.log("res=",res);
     })
-    .catch(function (error) {
-      console.log(error);
-      this.t_errors.push(error);
+    .catch((e) => {
+      console.log("ee=",e);
+      this.t_errors.push(e);
     })
     .then(() => {
       this.$router.push({name: 'marks'});
@@ -109,12 +117,12 @@ export default {
   },
 
   methods: {
-    deleteBookmk(id) {
-      let uri = `http://localhost:4000/marks/delete/${id}`;
-      this.axios.delete(uri).then((response) => {
-        this.bookmks.splice(this.bookmks.indexOf(id), 1);
-      });
-    },
+    // deleteBookmk(id) {
+    //   let uri = `http://localhost:4000/marks/delete/${id}`;
+    //   this.axios.delete(uri).then((response) => {
+    //     this.bookmks.splice(this.bookmks.indexOf(id), 1);
+    //   });
+    // },
     
     rmpunctuation(ss) {
       this.nopunc =  ss.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g," ");

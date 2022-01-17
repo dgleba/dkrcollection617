@@ -1,4 +1,4 @@
-var CACHE_NAME = 'mark616-version-20';
+var CACHE_NAME = 'mark616-version-21';
 var urlsToCache = [
   '/css/app.59961df6.css',
   '/css/chunk-vendors.6c57f554.css',
