@@ -7,6 +7,10 @@ cd /ap/dkr/dkrcollection617a
 cd ./bmark616h-yard/vuemarks616/vmark616g
 source  shb.sh
 
+cd /ap/dkr/dkrcollection617a
+
+source vp-deploy
+
 
 
 
@@ -31,6 +35,8 @@ cd ./bmark616h-yard/vuemarks616/vmark616g
 bash shdev.sh
 
 }
+
+set +vx
 
 echo
 echo '--- :) --- finished. reached end.'

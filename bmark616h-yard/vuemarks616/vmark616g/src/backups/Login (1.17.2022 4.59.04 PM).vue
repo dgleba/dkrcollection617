@@ -5,7 +5,9 @@
     <ul v-if="t_errors && t_errors.length">
       <li v-for="t_error of t_errors" v-bind:key="t_error">
         <!-- <alert show>{{ t_error.message }}</alert> -->
-        <div class="alert alert-warning" role="alert"><!-- show> -->{{ t_error.message }}</div>
+        <div class="alert alert-warning" role="alert">
+            <!-- show> -->{{ t_error.message }}
+        </div>
       </li>
     </ul>
 
@@ -22,14 +24,11 @@
       <button type="button" variant="success" @click.stop="register()">Register</button>
     </form>
     <br />
-    <br />
-    Expires: {{ exptoken | dateformat2() }}
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import dayjs from "dayjs";
 
 export default {
   name: "Login",
@@ -40,29 +39,12 @@ export default {
       login: {},
       t_errors: [],
       state: "",
-      exptoken: "",
     };
   },
-
   methods: {
-    getJWTExpireDate(jwtToken) {
-      if (jwtToken) {
-        let expire = "";
-        try {
-          const [, payload] = jwtToken.split(".");
-          const { exp: expires } = JSON.parse(window.atob(payload));
-          if (typeof expires === "number") {
-            expire = new Date(expires * 1000);
-          }
-          return expire;
-        } catch {
-          // ignore
-        }
-      }
-      return null;
-    },
-    lastRouteName: function () {
-      let returnVal = "";
+
+    lastRouteName: function() {
+      let returnVal = '';
       const routerStack = this.$router.history.stack;
       const idx = this.$router.history.index;
       if (idx > 0) {
@@ -82,7 +64,7 @@ export default {
           localStorage.setItem("jwtusername", this.username);
           console.log(this.$router.history);
           this.$router.push({
-            name: "marks",
+            name: 'marks',
           });
         })
         .catch((e) => {
@@ -90,28 +72,24 @@ export default {
           this.t_errors.push(e);
         });
     },
-
     register() {
       this.$router.push({
         name: "Register",
       });
     },
   },
-  filters: {
-    dateformat2: function (input) {
-      if (input) {
-        return dayjs(String(input)).format("ddd MMM DD HH:mm");
-      }
-    },
-  },
-  created() {
-    this.exptoken = this.getJWTExpireDate(localStorage.getItem("jwtToken"));
-  },
 };
 
 /*
+          <label>Username:</label>
+          <input id="username"  v-model.trim="username">
 
         <br/>
 
+          <label>Password:</label>
+          <input type="password" id="password"  v-model.trim="password">
+
+        <br/>
+ 
 */
 </script>
