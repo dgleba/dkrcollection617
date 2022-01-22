@@ -32,7 +32,6 @@ LIMIT 11
 
 
 
-
 # Stop all
 
 ```
@@ -78,11 +77,46 @@ cd ./bmark616h-yard/vuemarks616/vmark616g/
 bash sh.sh
 ```
 
+
+# django dev
+
+```
+docker-compose -f ./bmark616h-yard/dj616b/docker-compose.yml      up -d 
+```
+
+# deploy changes to django
+
+```
+ba pdeploy
+
+```
+
+
+
+# Check these scripts..
+
+
+/ap/dkr/dkrcollection617a$
+
+
+```
+devvue
+pdeploy
+sdownall.sh
+upprod.sh
+vbuild
+vp-deploy
+```
+
+
+
 # Change version in ...
 
+```
 BookmkIndexComponent.vue
 public/service.worker.js
 public/manifest.json
+```
 
 
 # layout
