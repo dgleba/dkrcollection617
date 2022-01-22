@@ -20,10 +20,11 @@ class bookmk(models.Model):
     description = models.TextField(max_length=32100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
+    id_shaarli = models.IntegerField(null=True)
 
     class Meta:
         pass
-        ordering = ('-id',)    
+        ordering = ('-created_at',)    
 
     @property
     def model_short_url(self):

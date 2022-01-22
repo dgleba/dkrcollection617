@@ -7,6 +7,12 @@
 #
 
 
+
+
+impjsonsql: 
+	docker-compose  exec dbm /bin/bash /script/imp-shaar.sh
+
+
 #
 # dump all data
 #
@@ -14,7 +20,7 @@ dump:
 	docker-compose  exec dbm bash /script/all-individual-mysqldump.sh
 
 
-nukedb:
+nukedb_careful:
 	docker-compose    run --rm dbm bash -c "rm -rf /var/lib/mysql/*"
 
 cleart:

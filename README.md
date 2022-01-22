@@ -5,10 +5,38 @@ Bookmarking and notes system
 
 
 
+# Import newer from shaarli
+
+```
+albe@racknerd-4f4016:/ap/dkr/dkrcollection617a/bmark616h-yard/php605m$    python3 script/import-shaar-api.py
+
+
+insert ignore into mark616_bookmk 
+( title,url,      body,    created_at,                                                         tagtext, id_shaarli, bhash    ) select
+  title,url,description, CONVERT_TZ( CAST(created AS DATETIME), @@session.time_zone, '+00:00' ) ,tags,    id,      "from_imp_shaar_api" 
+  from imp_shaar_api  a
+  where a.id>10430
+-- limit 1
+
+check for duplicates..
+
+
+SELECT id_shaarli, title, count(id_shaarli)
+FROM `mark616_bookmk`
+group by (id_shaarli), title
+ORDER BY count(id_shaarli) DESC
+LIMIT 11
+
+
+```
+
+
+
+
 # Stop all
 
 ```
-cd /ap/dkr/dkrcollection617
+cd /ap/dkr/dkrcollection617a
 
 bash sdownall.sh
 
