@@ -75,4 +75,19 @@ class bookmkAdmin(admin.ModelAdmin):
         "comment",
     ]
 
+    def get_form(self, request, obj=None, **kwargs):
+        form = super(bookmkAdmin, self).get_form(request, obj, **kwargs)
+        form.base_fields['title'].widget.attrs['style'] = 'width: 81%'
+        form.base_fields['tagtext'].widget.attrs['style'] = 'width: 81%'
+        return form
+
+    # https://stackoverflow.com/questions/910169/resize-fields-in-django-admin
+    # class YourModelAdmin(admin.ModelAdmin):
+    #     formfield_overrides = {
+    #         models.CharField: {'widget': TextInput(attrs={'size':'20'})},
+    #         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
+    #     }
+
 admin.site.register(models.bookmk, bookmkAdmin)
+
+

@@ -25,8 +25,9 @@ devdown() {
 # dev
 
 docker-compose -f ./bmark616h-yard/php605m/docker-compose.yml    down
+
 docker-compose -f ./bmark616h-yard/dj616b/docker-compose.yml     down
-docker-compose -f ./bmark616h-yard/dj616b/docker-compose.yml     restart
+docker-compose -f ./bmark616h-yard/dj616b/docker-compose.yml     up
 
 ddsc() { echo 'dsc-v4 -- stop container by name' ; docker ps | grep $1 | awk '{print $1}' | xargs docker stop; }
 
