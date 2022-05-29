@@ -70,6 +70,7 @@ tar1() {
       sudo find . -type f |  grep -Ev  \
         'public/assets/|x/|.tgz|node_modules/|zip/|static/|log/|tmp/' > $tfile
       tar -czf /ap/zip/$HOSTNAME$fnpath$dts.tgz -T $tfile
+      # cp /ap/zip/$HOSTNAME$fnpath$dts.tgz /ap/zip/$HOSTNAME${fnpath}_latest.tgz 
     }
 
     # run one of the above..
