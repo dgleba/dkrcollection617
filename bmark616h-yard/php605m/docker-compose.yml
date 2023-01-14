@@ -78,6 +78,8 @@ services:
   adminer:
     # http://10.4.1.231:6613/
     # http://10.4.1.231:7412/  use dbm or ip:port for server while logging in.
+    # https://198.144.183.160.nip.io/
+    # https://admr.198.144.183.160.nip.io/
     image: adminer:4.7
     restart: always
     volumes:

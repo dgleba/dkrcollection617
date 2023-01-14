@@ -51,9 +51,9 @@ services:
     ports:
       - "6464:80"
     environment:
-      - VIRTUAL_HOST=mark616.198.144.183.160.nip.io
+      - VIRTUAL_HOST=mark616.198.144.183.160.nip.io,mark616.davegg.com,mark.davegg.com
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=mark616.198.144.183.160.nip.io
+      - LETSENCRYPT_HOST=mark616.198.144.183.160.nip.io,mark616.davegg.com,mark.davegg.com
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
     networks:
       - 499d-django_default 

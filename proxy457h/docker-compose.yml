@@ -10,9 +10,9 @@ networks:
     name: sister
   seafile-net:
 
-
 services:
-  
+
+
   web:
     # to test this jwilder/LE
     # http://web-108-168-7-24.nip.io/
@@ -24,7 +24,7 @@ services:
     expose:
       - "80"
     environment:
-      - VIRTUAL_HOST=web.198.144.183.160.nip.io
+      - VIRTUAL_HOST=web.198.144.183.160.nip.io,web.davegg.com
       #- VIRTUAL_HOST=web.c617eef4.nip.io
       - VIRTUAL_PORT=80
       - LETSENCRYPT_HOST=web.198.144.183.160.nip.io
