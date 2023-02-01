@@ -64,11 +64,11 @@ tar1() {
     }
 
     tarfone() {
-
+      # had sudo on rm and find.
       tfile=/tmp/tmpfilefindtar23234.txt; 
-      sudo rm $tfile
-      sudo find . -type f |  grep -Ev  \
-        'public/assets/|x/|.tgz|node_modules/|zip/|static/|log/|tmp/' > $tfile
+      rm $tfile
+      find . -type f |  grep -Ev  \
+        'public/assets/|x/|.tgz|node_modules/|zip/|static/|log/|tmp/|ncdocroot/' > $tfile
       tar -czf /ap/zip/$HOSTNAME$fnpath$dts.tgz -T $tfile
       # cp /ap/zip/$HOSTNAME$fnpath$dts.tgz /ap/zip/$HOSTNAME${fnpath}_latest.tgz 
     }

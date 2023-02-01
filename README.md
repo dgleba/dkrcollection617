@@ -160,3 +160,26 @@ ssl proxy..
 
 ```
 
+
+
+# How to Backup
+
+## option A
+
+```
+export mysql data
+
+cd /ap/dkr/dkrcollection617a/bmark616h-yard/php605m
+make dump
+
+cd /ap/dkrcollection617a
+bash tarcap617
+```
+
+## option B
+
+```
+cd /ap/dkrcollection617a
+sudo bash tarfull617
+```
+

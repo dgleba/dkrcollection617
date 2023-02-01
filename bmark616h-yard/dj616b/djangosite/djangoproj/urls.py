@@ -43,5 +43,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
 
     path('mark616/', include('mark616.urls')),
+
+    path('martor/', include('martor.urls')),
     
 ]
