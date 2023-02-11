@@ -44,6 +44,6 @@ urlpatterns = [
 
     path('mark616/', include('mark616.urls')),
 
-    path('martor/', include('martor.urls')),
+    # path('martor/', include('martor.urls')),
     
 ]

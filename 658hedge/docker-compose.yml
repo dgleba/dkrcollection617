@@ -5,7 +5,7 @@ networks:
     name: sister
 
 services:
-  database:
+  dbh:
     image: postgres:13.4-alpine
     environment:
       - PQ=he
@@ -16,7 +16,7 @@ services:
     restart: always
     networks:
       - sister 
-  app:
+  apph:
     # Make sure to use the latest release from https://hedgedoc.org/latest-release
     image: quay.io/hedgedoc/hedgedoc:1.9.4
     volumes:
@@ -27,7 +27,7 @@ services:
       - "12121:3000"
     restart: always
     depends_on:
-      - database
+      - dbh
     environment:
       - VIRTUAL_HOST=hedge.198.144.183.160.nip.io
       - VIRTUAL_PORT=3000

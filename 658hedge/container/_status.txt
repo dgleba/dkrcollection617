@@ -1,0 +1,53 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  https://github.com/hedgedoc/container
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2023-02-11[Feb-Sat]12-20PM 
+
+
+edc21d2\ 2023-02-06 (HEAD -> master, origin/master, origin/HEAD)\ Merge pull request #394 from hedgedoc/renovate/docker-setup-buildx-action-digest\ [GitHub]
+
+7ad1472\ 2023-02-06\ Update docker/setup-buildx-action digest to f03ac48\ [GitHub]
+ade89a2\ 2023-01-31\ Merge pull request #393 from hedgedoc/renovate/docker-setup-buildx-action-digest\ [GitHub]
+73503e0\ 2023-01-31\ Update docker/setup-buildx-action digest to 15c905b\ [GitHub]
+eb26bd4\ 2023-01-31\ Merge pull request #391 from hedgedoc/renovate/docker-build-push-action-digest\ [GitHub]
+2b1943e\ 2023-01-30\ Update docker/build-push-action digest to 1104d47\ [GitHub]
+1e26071\ 2023-01-25\ Merge pull request #390 from hedgedoc/renovate/docker-build-push-action-digest\ [GitHub]
+bd744ec\ 2023-01-25\ Update docker/build-push-action digest to 37abced\ [GitHub]
+31565f9\ 2023-01-05\ Merge pull request #389 from hedgedoc/renovate/actions-checkout-digest\ [GitHub]
+8bfc130\ 2023-01-05\ Update actions/checkout digest to ac59398\ [GitHub]
+7209471\ 2022-12-13\ Merge pull request #387 from hedgedoc/renovate/actions-checkout-digest\ [GitHub]
+2d2af56\ 2022-12-13\ Update actions/checkout digest to 755da8c\ [GitHub]
+66a151f\ 2022-12-13\ Merge pull request #386 from hedgedoc/renovate/actions-checkout-digest\ [GitHub]
+6caab0b\ 2022-12-12\ Update actions/checkout digest to 7dd9e2a\ [GitHub]
+497dbde\ 2022-12-06\ Merge pull request #384 from hedgedoc/renovate/node-16.18.1-bullseye-slim\ [GitHub]
+e2dbd1a\ 2022-12-06\ Update Node.js to 761f292\ [GitHub]
+ad82420\ 2022-12-06\ Merge pull request #383 from hedgedoc/renovate/node-16.18.1-bullseye-slim\ [GitHub]
+cf691e3\ 2022-12-06\ Update Node.js to 6c844c5\ [GitHub]
+5b5e318\ 2022-11-16\ Merge pull request #382 from hedgedoc/renovate/node-16.18.1-bullseye-slim\ [GitHub]
+84119b6\ 2022-11-16\ Update Node.js to d0a2a23\ [GitHub]
+dc688a6\ 2022-11-16\ Merge pull request #381 from hedgedoc/renovate/node-16.18.1-bullseye-slim\ [GitHub]
+c6b0040\ 2022-11-15\ Update Node.js to 7c0dfb1\ [GitHub]
+46069d0\ 2022-11-15\ Merge pull request #380 from hedgedoc/renovate/node-16.18.1-bullseye-slim\ [GitHub]
+efc8b55\ 2022-11-15\ Update Node.js to d8c8c5d\ [GitHub]
+e70cd93\ 2022-11-15\ Merge pull request #379 from hedgedoc/renovate/node-16.18.1-bullseye-slim\ [GitHub]
+f69c9aa\ 2022-11-15\ Update Node.js to dadd13e\ [GitHub]
+ca3fb85\ 2022-11-12\ Merge pull request #378 from hedgedoc/renovate/node-16.18.1-alpine\ [GitHub]
+7f102a7\ 2022-11-12\ Update Node.js to 15dd66f\ [GitHub]
+799d97a\ 2022-11-12\ Merge pull request #377 from hedgedoc/renovate/node-16.18.1-alpine\ [GitHub]
+f9fcedd\ 2022-11-12\ Update Node.js to b9e3244\ [GitHub]
+6e236b3\ 2022-11-11\ Merge pull request #375 from hedgedoc/renovate/node-16.x\ [GitHub]
+da4bd5e\ 2022-11-11\ Update Node.js to v16.18.1\ [GitHub]
+33ca52a\ 2022-11-06\ Merge pull request #374 from hedgedoc/1.9.6\ [GitHub]
+96bb9f4\ 2022-11-06\ feat(release): Update to hedgedoc 1.9.6\ [Tilman Vatteroth]
+933e84a\ 2022-10-30\ Merge pull request #373 from hedgedoc/release/1.9.5\ [GitHub]
+5ab7b86\ 2022-10-30\ feat(release): Update to hedgedoc 1.9.5\ [Tilman Vatteroth]
+8a143c4\ 2022-10-27\ Merge pull request #372 from hedgedoc/renovate/node-16.18.0-alpine\ [GitHub]
+539b4c2\ 2022-10-27\ Update Node.js to f16544b\ [GitHub]
+f2aeea2\ 2022-10-26\ Merge pull request #371 from hedgedoc/renovate/node-16.18.0-alpine\ [GitHub]
+d2c8fdd\ 2022-10-26\ Update Node.js to 842770e\ [GitHub]
+dd65fa2\ 2022-10-26\ Merge pull request #369 from hedgedoc/renovate/node-16.18.0-bullseye-slim\ [GitHub]
+70155f1\ 2022-10-25\ Update Node.js to 5c9f79e\ [GitHub]
+ae0a5a4\ 2022-10-25\ Merge pull request #370 from hedgedoc/renovate/node-16.18.0-alpine\ [GitHub]
+

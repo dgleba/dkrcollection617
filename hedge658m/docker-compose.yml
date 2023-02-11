@@ -1,0 +1,46 @@
+version: '3'
+
+networks:
+  sister2:
+    name: sister2
+
+services:
+
+  hedgapp:
+    # Make sure to use the latest release from https://hedgedoc.org/latest-release
+    image: quay.io/hedgedoc/hedgedoc:1.9.6
+    volumes:
+      - ./sysdata/hedguploads:/hedgedoc/public/uploads
+    env_file:
+      - ./.env
+    ports:
+      - "12122:3000"
+    expose:
+      - "3000"
+    restart: always
+    # depends_on:
+      # - dbh
+    # environment:
+      # - VIRTUAL_HOST=hedge.198.144.183.160.nip.io
+      # - VIRTUAL_PORT=3000
+      # - LETSENCRYPT_HOST=hedge.198.144.183.160.nip.io
+      # - LETSENCRYPT_EMAIL=dgleba@gmail.com
+    networks:
+      - sister2
+
+  hedgdbm:
+    image: mariadb:10.5
+    env_file:
+      - ./.env
+    # environment:
+      # - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    volumes:
+      - ./sysdata/hedgdbm:/var/lib/mysql
+      # This config provides UTF-8 support to the database by default
+      # If this config is not used, HedgeDoc breaks as it tries to write
+      # UTF-8 to a latin database.
+      - ./resources/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+    networks:
+      - sister2
+    restart: always
+

@@ -11,4 +11,4 @@ gunicorn
 mysqlclient
 django-environ
 
-martor
+# martor

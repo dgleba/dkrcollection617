@@ -3,6 +3,8 @@ version: "3.6"
 networks:
   sister:
     name: sister
+  sister2:
+    name: sister2
 
 services:
   #
@@ -98,6 +100,7 @@ services:
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
     networks:
       - sister
+      - sister2
 
 
   pmy:

@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'blogapp',
     # 'schedulerapp',
     'mark616',
-    'martor',
+    # 'martor',
 ]
 
 # not used..
@@ -203,6 +203,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # CRONJOBS = [
 #     ('* * * * *', 'blogapp.cron.scheduled_job0')
 # ]
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
