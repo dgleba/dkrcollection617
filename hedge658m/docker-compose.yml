@@ -3,6 +3,8 @@ version: '3'
 networks:
   sister2:
     name: sister2
+  sister:
+    name: sister
 
 services:
 
@@ -20,27 +22,28 @@ services:
     restart: always
     # depends_on:
       # - dbh
-    # environment:
-      # - VIRTUAL_HOST=hedge.198.144.183.160.nip.io
-      # - VIRTUAL_PORT=3000
-      # - LETSENCRYPT_HOST=hedge.198.144.183.160.nip.io
-      # - LETSENCRYPT_EMAIL=dgleba@gmail.com
+    environment:
+      - VIRTUAL_HOST=hedgem.198.144.183.160.sslip.io
+      - VIRTUAL_PORT=3000
+      - LETSENCRYPT_HOST=hedgem.198.144.183.160.sslip.io
+      - LETSENCRYPT_EMAIL=dgleba@gmail.com
     networks:
       - sister2
+      - sister
 
-  hedgdbm:
-    image: mariadb:10.5
-    env_file:
-      - ./.env
-    # environment:
-      # - MYSQL_ALLOW_EMPTY_PASSWORD=true
-    volumes:
-      - ./sysdata/hedgdbm:/var/lib/mysql
-      # This config provides UTF-8 support to the database by default
-      # If this config is not used, HedgeDoc breaks as it tries to write
-      # UTF-8 to a latin database.
-      - ./resources/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
-    networks:
-      - sister2
-    restart: always
+  # hedgdbm:
+    # image: mariadb:10.5
+    # env_file:
+      # - ./.env
+    # # environment:
+      # # - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    # volumes:
+      # - ./sysdata/hedgdbm:/var/lib/mysql
+      # # This config provides UTF-8 support to the database by default
+      # # If this config is not used, HedgeDoc breaks as it tries to write
+      # # UTF-8 to a latin database.
+      # - ./resources/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+    # networks:
+      # - sister2
+    # restart: always
 
