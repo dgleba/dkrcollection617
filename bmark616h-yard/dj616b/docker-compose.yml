@@ -3,6 +3,8 @@ version: "3.6"
 networks:
   sister:
     name: sister
+  sister2:
+    name: sister2
 
 
 services:
@@ -36,7 +38,7 @@ services:
       - "6461:8000"
     networks:
       # - 499d-django_default      
-      - sister      
+      - sister
     environment:
       - VIRTUAL_HOST=devdj.198.144.183.160.nip.io
       - VIRTUAL_PORT=8000

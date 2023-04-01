@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'hedgedoc_Notes_list' %}">
+    Notes Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>viewcount</td><td>{{ object.viewcount }}</td></tr>
+    <tr><td>permission</td><td>{{ object.permission }}</td></tr>
+    <tr><td>title</td><td>{{ object.title }}</td></tr>
+    <tr><td>alias</td><td>{{ object.alias }}</td></tr>
+    <tr><td>shortid</td><td>{{ object.shortid }}</td></tr>
+    <tr><td>content</td><td>{{ object.content }}</td></tr>
+    <tr><td>authorship</td><td>{{ object.authorship }}</td></tr>
+    <tr><td>id</td><td>{{ object.id }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

@@ -29,9 +29,9 @@ services:
     depends_on:
       - dbh
     environment:
-      - VIRTUAL_HOST=hedge.198.144.183.160.nip.io
+      - VIRTUAL_HOST=hedgep.198.144.183.160.nip.io
       - VIRTUAL_PORT=3000
-      - LETSENCRYPT_HOST=hedge.198.144.183.160.nip.io
+      - LETSENCRYPT_HOST=hedgep.198.144.183.160.nip.io
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
     networks:
       - sister 

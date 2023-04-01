@@ -1,0 +1,66 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'hedgedoc_Notes_list' %}">
+    Notes Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="viewcount">viewcount: </label>
+      <input class="form-control col-sm-10"'
+         id="viewcount" type="number"
+         name="viewcount" value="{{ object.viewcount }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="permission">permission: </label>
+      <input class="form-control col-sm-10"'
+         id="permission" type="text"
+         name="permission" value="{{ object.permission }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="title">title: </label>
+      <input class="form-control col-sm-10"'
+         id="title" type="text"
+         name="title" value="{{ object.title }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="alias">alias: </label>
+      <input class="form-control col-sm-10"'
+         id="alias" type="text"
+         name="alias" value="{{ object.alias }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="shortid">shortid: </label>
+      <input class="form-control col-sm-10"'
+         id="shortid" type="text"
+         name="shortid" value="{{ object.shortid }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="content">content: </label>
+      <input class="form-control col-sm-10"'
+         id="content" type="text"
+         name="content" value="{{ object.content }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="authorship">authorship: </label>
+      <input class="form-control col-sm-10"'
+         id="authorship" type="text"
+         name="authorship" value="{{ object.authorship }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="id">id: </label>
+      <input class="form-control col-sm-10"'
+         id="id" type="text"
+         name="id" value="{{ object.id }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

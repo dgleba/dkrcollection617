@@ -16,7 +16,7 @@ class Post(models.Model):
     # Fields
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
-    title = models.CharField(max_length=230)
+    title = models.CharField(max_length=230, default=None, blank=True, null=True)
     body = models.TextField(max_length=32100, default=None, blank=True, null=True)
 
     class Meta:

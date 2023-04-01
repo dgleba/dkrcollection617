@@ -75,6 +75,7 @@ services:
         max-file: "5"
     networks:
       - sister
+      - sister2
 
 
   adminer:

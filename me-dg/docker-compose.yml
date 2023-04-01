@@ -13,8 +13,8 @@ services:
     image: nginx:1.21-alpine
     volumes:
       - ./site:/usr/share/nginx/html
-    expose:
-      - "80"
+    # expose:
+      # - "80"
     # environment:
       # - VIRTUAL_HOST=davegg.com,198.144.183.160.nip.io,d.davegg.com
       # - VIRTUAL_PORT=80

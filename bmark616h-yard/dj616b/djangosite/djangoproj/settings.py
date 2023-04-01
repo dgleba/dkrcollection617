@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blogapp',
     # 'schedulerapp',
     'mark616',
+    'hedgedoc',
     # 'martor',
 ]
 

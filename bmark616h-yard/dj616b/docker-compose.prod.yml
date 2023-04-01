@@ -7,7 +7,9 @@ networks:
     driver: bridge
   sister:
     name: sister
-
+  sister2:
+    name: sister2
+    
 volumes:
   mysqldata:
 
@@ -37,6 +39,7 @@ services:
     networks:
       - 499d-django_default 
       - sister
+      - sister2
 
   # nginx to serve production django
   nginx:
@@ -58,6 +61,7 @@ services:
     networks:
       - 499d-django_default 
       - sister
+      - sister2
 
   markv:
     # just nginx without vue build 

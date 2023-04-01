@@ -26,6 +26,12 @@ date
 set +vx
 
 cd /ap/dkr
-sudo tar -czf dkr617-fullsudo-racknerd_$(date +"_%Y.%m.%d_%H.%M.%S").tgz dkrcollection617a/
+sudo tar -cvz \
+        --exclude="cftunnel/sysdata/ncdocroot/*" \
+        --exclude="cftunnel/sysdata/ncdb/*" \
+        --exclude="tmp/*" \
+        --exclude="x/*"  \
+    -f /ap/zip/dkr617-fullsudo-racknerd.tgz dkrcollection617a/
+    # -f /ap/zip/dkr617-fullsudo-racknerd_$(date +"_%Y.%m.%d_%H.%M.%S").tgz dkrcollection617a/
 
 date

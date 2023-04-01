@@ -32,14 +32,29 @@ class PostAdminForm(forms.ModelForm):
 
 class PostAdmin(admin.ModelAdmin):
     # add_form_template = 'blogapp/admin/postadd.html'
+    actions = None
     form = PostAdminForm
     list_display = [
-        # "id",
-        # "created",
-        # "last_updated",
+        "id",
+        "title",
+        "body_tr",
+        "created",
+        "last_updated",
+    ]
+    search_fields = [
+        "id",
         "title",
         "body",
     ]
+    list_display_links = [
+        "id",
+        "title",
+        # "body",
+    ]    
+    
+    @admin.display()
+    def body_tr(self, obj):
+        return ("%s" % (obj.body))[0:80]
 
 admin.site.register(models.Post, PostAdmin)
 

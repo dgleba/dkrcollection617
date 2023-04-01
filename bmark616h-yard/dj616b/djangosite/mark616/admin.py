@@ -88,6 +88,10 @@ class bookmkAdmin(admin.ModelAdmin):
     #         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
     #     }
 
+    class Media:
+        css = { "all": ("mark616/first.css",) }
+        js = ("mark616/autosize.js",)
+        
 admin.site.register(models.bookmk, bookmkAdmin)
 
 

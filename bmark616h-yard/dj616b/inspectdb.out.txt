@@ -1,0 +1,1138 @@
+Docker container started entrypoint.sh
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
+from django.db import models
+
+
+class Authors(models.Model):
+    color = models.CharField(max_length=255, blank=True, null=True)
+    noteid = models.ForeignKey('Notes', models.DO_NOTHING, db_column='noteId', blank=True, null=True)  # Field name made lowercase.
+    userid = models.ForeignKey('Users', models.DO_NOTHING, db_column='userId', blank=True, null=True)  # Field name made lowercase.
+    createdat = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Authors'
+
+
+class Notes(models.Model):
+    id = models.CharField(primary_key=True, max_length=36, db_collation='utf8mb4_bin')
+    ownerid = models.ForeignKey('Users', models.DO_NOTHING, db_column='ownerId', blank=True, null=True)  # Field name made lowercase.
+    content = models.TextField(blank=True, null=True)
+    title = models.TextField(blank=True, null=True)
+    createdat = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt', blank=True, null=True)  # Field name made lowercase.
+    shortid = models.CharField(max_length=255)
+    permission = models.CharField(max_length=9, blank=True, null=True)
+    viewcount = models.IntegerField(blank=True, null=True)
+    lastchangeuserid = models.CharField(db_column='lastchangeuserId', max_length=36, db_collation='utf8mb4_bin', blank=True, null=True)  # Field name made lowercase.
+    lastchangeat = models.DateTimeField(db_column='lastchangeAt', blank=True, null=True)  # Field name made lowercase.
+    alias = models.CharField(max_length=255, blank=True, null=True)
+    savedat = models.DateTimeField(db_column='savedAt', blank=True, null=True)  # Field name made lowercase.
+    authorship = models.TextField(blank=True, null=True)
+    deletedat = models.DateTimeField(db_column='deletedAt', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Notes'
+
+
+class Revisions(models.Model):
+    id = models.CharField(primary_key=True, max_length=36, db_collation='utf8mb4_bin')
+    noteid = models.ForeignKey(Notes, models.DO_NOTHING, db_column='noteId', blank=True, null=True)  # Field name made lowercase.
+    patch = models.TextField(blank=True, null=True)
+    lastcontent = models.TextField(db_column='lastContent', blank=True, null=True)  # Field name made lowercase.
+    content = models.TextField(blank=True, null=True)
+    length = models.IntegerField(blank=True, null=True)
+    createdat = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt', blank=True, null=True)  # Field name made lowercase.
+    authorship = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Revisions'
+
+
+class Sequelizemeta(models.Model):
+    name = models.CharField(primary_key=True, max_length=255)
+
+    class Meta:
+        managed = False
+        db_table = 'SequelizeMeta'
+
+
+class Sessions(models.Model):
+    sid = models.CharField(primary_key=True, max_length=36)
+    expires = models.DateTimeField(blank=True, null=True)
+    data = models.TextField(blank=True, null=True)
+    createdat = models.DateTimeField(db_column='createdAt')  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Sessions'
+
+
+class Temp(models.Model):
+    id = models.CharField(primary_key=True, max_length=255)
+    date = models.TextField(blank=True, null=True)
+    createdat = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Temp'
+
+
+class Users(models.Model):
+    id = models.CharField(primary_key=True, max_length=36, db_collation='utf8mb4_bin')
+    profileid = models.CharField(unique=True, max_length=255, blank=True, null=True)
+    profile = models.TextField(blank=True, null=True)
+    history = models.TextField(blank=True, null=True)
+    createdat = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt', blank=True, null=True)  # Field name made lowercase.
+    accesstoken = models.TextField(db_column='accessToken', blank=True, null=True)  # Field name made lowercase.
+    refreshtoken = models.TextField(db_column='refreshToken', blank=True, null=True)  # Field name made lowercase.
+    email = models.TextField(blank=True, null=True)
+    password = models.TextField(blank=True, null=True)
+    deletetoken = models.CharField(db_column='deleteToken', max_length=36, db_collation='utf8mb4_bin', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Users'
+
+
+class A1(models.Model):
+    created = models.CharField(max_length=333, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.IntegerField(blank=True, null=True)
+    shorturl = models.CharField(max_length=444, blank=True, null=True)
+    tags = models.JSONField(blank=True, null=True)
+    title = models.CharField(max_length=4455, blank=True, null=True)
+    updated = models.CharField(max_length=222, blank=True, null=True)
+    url = models.CharField(max_length=9544, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'a1'
+
+
+class AuthGroup(models.Model):
+    name = models.CharField(unique=True, max_length=150)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group'
+
+
+class AuthGroupPermissions(models.Model):
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+    permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group_permissions'
+        unique_together = (('group', 'permission'),)
+
+
+class AuthPermission(models.Model):
+    name = models.CharField(max_length=255)
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
+    codename = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_permission'
+        unique_together = (('content_type', 'codename'),)
+
+
+class AuthUser(models.Model):
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.IntegerField()
+    username = models.CharField(unique=True, max_length=150)
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    email = models.CharField(max_length=254)
+    is_staff = models.IntegerField()
+    is_active = models.IntegerField()
+    date_joined = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user'
+
+
+class AuthUserGroups(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_groups'
+        unique_together = (('user', 'group'),)
+
+
+class AuthUserUserPermissions(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_user_permissions'
+        unique_together = (('user', 'permission'),)
+
+
+class BlogappPost(models.Model):
+    created = models.DateTimeField()
+    last_updated = models.DateTimeField()
+    title = models.CharField(max_length=230)
+    body = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'blogapp_post'
+
+
+class Books(models.Model):
+    title = models.CharField(max_length=30)
+    genre = models.CharField(max_length=10)
+    description = models.TextField()
+    obs_id = models.TextField(db_column='obs.id')  # Field renamed to remove unsuitable characters.
+    obs_id_0 = models.TextField(db_column='obs_id')  # Field renamed because of name conflict.
+    obs_id_1 = models.CharField(db_column='obs-id', max_length=60)  # Field renamed to remove unsuitable characters. Field renamed because of name conflict.
+
+    class Meta:
+        managed = False
+        db_table = 'books'
+
+
+class Copy01ImpShaarApi(models.Model):
+    created = models.CharField(max_length=333, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.IntegerField(blank=True, null=True)
+    shorturl = models.CharField(max_length=444, blank=True, null=True)
+    tags = models.CharField(max_length=2333, blank=True, null=True)
+    title = models.CharField(max_length=4455, blank=True, null=True)
+    updated = models.CharField(max_length=222, blank=True, null=True)
+    url = models.CharField(max_length=8544, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'copy01_imp_shaar_api'
+
+
+class Copy01Mark616Bookmk(models.Model):
+    title = models.CharField(max_length=6430, blank=True, null=True)
+    url = models.TextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
+    bhash = models.CharField(max_length=1930, blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    tagtext = models.CharField(max_length=1930, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'copy01_mark616_bookmk'
+
+
+class Copy02Mark616Bookmk(models.Model):
+    title = models.CharField(max_length=6430, blank=True, null=True)
+    url = models.TextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
+    bhash = models.CharField(max_length=1930, blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    tagtext = models.CharField(max_length=1930, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'copy02_mark616_bookmk'
+
+
+class CopyNotesHedge(models.Model):
+    id = models.CharField(primary_key=True, max_length=36, db_collation='utf8mb4_bin')
+    ownerid = models.CharField(db_column='ownerId', max_length=36, db_collation='utf8mb4_bin', blank=True, null=True)  # Field name made lowercase.
+    content = models.TextField(blank=True, null=True)
+    title = models.TextField(blank=True, null=True)
+    createdat = models.DateTimeField(db_column='createdAt', blank=True, null=True)  # Field name made lowercase.
+    updatedat = models.DateTimeField(db_column='updatedAt', blank=True, null=True)  # Field name made lowercase.
+    shortid = models.CharField(max_length=255)
+    permission = models.CharField(max_length=9, blank=True, null=True)
+    viewcount = models.IntegerField(blank=True, null=True)
+    lastchangeuserid = models.CharField(db_column='lastchangeuserId', max_length=36, db_collation='utf8mb4_bin', blank=True, null=True)  # Field name made lowercase.
+    lastchangeat = models.DateTimeField(db_column='lastchangeAt', blank=True, null=True)  # Field name made lowercase.
+    alias = models.CharField(max_length=255, blank=True, null=True)
+    savedat = models.DateTimeField(db_column='savedAt', blank=True, null=True)  # Field name made lowercase.
+    authorship = models.TextField(blank=True, null=True)
+    deletedat = models.DateTimeField(db_column='deletedAt', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'copy_Notes_hedge'
+
+
+class CopyImpShaarApi(models.Model):
+    created = models.CharField(max_length=333, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.IntegerField(blank=True, null=True)
+    shorturl = models.CharField(max_length=444, blank=True, null=True)
+    tags = models.CharField(max_length=2333, blank=True, null=True)
+    title = models.CharField(max_length=4455, blank=True, null=True)
+    updated = models.CharField(max_length=222, blank=True, null=True)
+    url = models.CharField(max_length=8544, blank=True, null=True)
+    iid = models.AutoField(primary_key=True)
+
+    class Meta:
+        managed = False
+        db_table = 'copy_imp_shaar_api'
+
+
+class CopyMark616Bookmk(models.Model):
+    title = models.CharField(max_length=6430, blank=True, null=True)
+    url = models.TextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
+    bhash = models.CharField(max_length=1930, blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    tagtext = models.CharField(max_length=1930, blank=True, null=True)
+    id_shaarli = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'copy_mark616_bookmk'
+
+
+class CopyNteNote(models.Model):
+    note_id = models.AutoField(primary_key=True)
+    note_fld = models.TextField(blank=True, null=True)
+    tags_fld = models.CharField(max_length=244, blank=True, null=True)
+    state_fld = models.CharField(max_length=99, blank=True, null=True)
+    country_id = models.IntegerField(blank=True, null=True)
+    province_id = models.IntegerField(blank=True, null=True)
+    city_id = models.IntegerField(blank=True, null=True)
+    createdtime = models.DateTimeField(blank=True, null=True)
+    updatedtime = models.DateTimeField(blank=True, null=True)
+    datenote = models.DateTimeField(blank=True, null=True)
+    active = models.CharField(max_length=3, blank=True, null=True)
+    note2 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'copy_nte_note'
+
+
+class DepCities(models.Model):
+    city_id = models.AutoField(primary_key=True)
+    province_id = models.IntegerField(blank=True, null=True)
+    city_name = models.CharField(max_length=300, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'dep_cities'
+
+
+class DepCountries(models.Model):
+    country_id = models.AutoField(primary_key=True)
+    country_name = models.CharField(max_length=300, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'dep_countries'
+
+
+class DepProvinces(models.Model):
+    province_id = models.AutoField(primary_key=True)
+    country_id = models.IntegerField(blank=True, null=True)
+    province_name = models.CharField(max_length=300, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'dep_provinces'
+
+
+class DjangoAdminLog(models.Model):
+    action_time = models.DateTimeField()
+    object_id = models.TextField(blank=True, null=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.PositiveSmallIntegerField()
+    change_message = models.TextField()
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'django_admin_log'
+
+
+class DjangoContentType(models.Model):
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'django_content_type'
+        unique_together = (('app_label', 'model'),)
+
+
+class DjangoMigrations(models.Model):
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_migrations'
+
+
+class DjangoSession(models.Model):
+    session_key = models.CharField(primary_key=True, max_length=40)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_session'
+
+
+class ImpShaarApi(models.Model):
+    id = models.IntegerField(unique=True)
+    title = models.CharField(max_length=4455, blank=True, null=True)
+    tags = models.CharField(max_length=2333, blank=True, null=True)
+    url = models.CharField(max_length=8544, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    created = models.CharField(max_length=333, blank=True, null=True)
+    updated = models.CharField(max_length=222, blank=True, null=True)
+    private = models.IntegerField(blank=True, null=True)
+    shorturl = models.CharField(max_length=444, blank=True, null=True)
+    id_pk = models.AutoField(primary_key=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'imp_shaar_api'
+
+
+class Jsontablename(models.Model):
+    jsoncolumnname = models.JSONField(db_column='jsonColumnName', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'jsonTableName'
+
+
+class Jsontablename1(models.Model):
+    jsoncolumnname = models.JSONField(db_column='jsonColumnName', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'jsonTableName1'
+
+
+class Mark616Bookmk(models.Model):
+    title = models.CharField(max_length=6430, blank=True, null=True)
+    url = models.TextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
+    bhash = models.CharField(max_length=1930, blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    tagtext = models.CharField(max_length=1930, blank=True, null=True)
+    id_shaarli = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'mark616_bookmk'
+
+
+class Mytable01(models.Model):
+    created = models.CharField(primary_key=True, max_length=225)
+    description = models.CharField(max_length=6041, blank=True, null=True)
+    id = models.IntegerField()
+    private = models.CharField(max_length=50)
+    shorturl = models.CharField(max_length=60)
+    tags0 = models.CharField(max_length=370, blank=True, null=True)
+    title = models.CharField(max_length=2524)
+    updated = models.CharField(max_length=225, blank=True, null=True)
+    url = models.CharField(max_length=4793)
+    tags1 = models.CharField(max_length=248, blank=True, null=True)
+    tags2 = models.CharField(max_length=236, blank=True, null=True)
+    tags3 = models.CharField(max_length=218, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'mytable01'
+
+
+class MytableConvertjsonShaarli01(models.Model):
+    created = models.CharField(max_length=225, blank=True, null=True)
+    description = models.CharField(max_length=6041, blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.CharField(max_length=50, blank=True, null=True)
+    shorturl = models.CharField(max_length=60, blank=True, null=True)
+    tags0 = models.CharField(max_length=370, blank=True, null=True)
+    title = models.CharField(max_length=2524, blank=True, null=True)
+    updated = models.CharField(max_length=225, blank=True, null=True)
+    url = models.CharField(max_length=4793, blank=True, null=True)
+    tags1 = models.CharField(max_length=248, blank=True, null=True)
+    tags2 = models.CharField(max_length=236, blank=True, null=True)
+    tags3 = models.CharField(max_length=218, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'mytable_convertjson_shaarli_01'
+
+
+class Nc1MqhGase(models.Model):
+    vehicle = models.CharField(max_length=45, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    odometer = models.IntegerField(blank=True, null=True)
+    avg_eco_on_dash = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    trip_odo = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    litre = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    cost = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    cost_per_litre = models.DecimalField(max_digits=10, decimal_places=3, blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    fillup = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_1mqh__gase'
+
+
+class NcAcl(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    tn = models.CharField(max_length=255, blank=True, null=True)
+    acl = models.TextField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_acl'
+
+
+class NcApiTokens(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    permissions = models.TextField(blank=True, null=True)
+    token = models.TextField(blank=True, null=True)
+    expiry = models.CharField(max_length=255, blank=True, null=True)
+    enabled = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_api_tokens'
+
+
+class NcAudit(models.Model):
+    user = models.CharField(max_length=255, blank=True, null=True)
+    ip = models.CharField(max_length=255, blank=True, null=True)
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    model_name = models.CharField(max_length=100, blank=True, null=True)
+    model_id = models.CharField(max_length=100, blank=True, null=True)
+    op_type = models.CharField(max_length=255, blank=True, null=True)
+    op_sub_type = models.CharField(max_length=255, blank=True, null=True)
+    status = models.CharField(max_length=255, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    details = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_audit'
+
+
+class NcCron(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    env = models.CharField(max_length=255, blank=True, null=True)
+    pattern = models.CharField(max_length=255, blank=True, null=True)
+    webhook = models.CharField(max_length=255, blank=True, null=True)
+    timezone = models.CharField(max_length=255, blank=True, null=True)
+    active = models.IntegerField(blank=True, null=True)
+    cron_handler = models.TextField(blank=True, null=True)
+    payload = models.TextField(blank=True, null=True)
+    headers = models.TextField(blank=True, null=True)
+    retries = models.IntegerField(blank=True, null=True)
+    retry_interval = models.IntegerField(blank=True, null=True)
+    timeout = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_cron'
+
+
+class NcDisabledModelsForRole(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=45, blank=True, null=True)
+    title = models.CharField(max_length=45, blank=True, null=True)
+    type = models.CharField(max_length=45, blank=True, null=True)
+    role = models.CharField(max_length=45, blank=True, null=True)
+    disabled = models.IntegerField(blank=True, null=True)
+    tn = models.CharField(max_length=255, blank=True, null=True)
+    rtn = models.CharField(max_length=255, blank=True, null=True)
+    cn = models.CharField(max_length=255, blank=True, null=True)
+    rcn = models.CharField(max_length=255, blank=True, null=True)
+    relation_type = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    parent_model_title = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_disabled_models_for_role'
+
+
+class NcEvolutions(models.Model):
+    title = models.CharField(max_length=255)
+    titledown = models.CharField(db_column='titleDown', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    description = models.CharField(max_length=255, blank=True, null=True)
+    batch = models.IntegerField(blank=True, null=True)
+    checksum = models.CharField(max_length=255, blank=True, null=True)
+    status = models.IntegerField(blank=True, null=True)
+    created = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_evolutions'
+
+
+class NcHooks(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    env = models.CharField(max_length=255, blank=True, null=True)
+    tn = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    event = models.CharField(max_length=255, blank=True, null=True)
+    operation = models.CharField(max_length=255, blank=True, null=True)
+    async_field = models.IntegerField(db_column='async', blank=True, null=True)  # Field renamed because it was a Python reserved word.
+    payload = models.IntegerField(blank=True, null=True)
+    url = models.TextField(blank=True, null=True)
+    headers = models.TextField(blank=True, null=True)
+    condition = models.TextField(blank=True, null=True)
+    notification = models.TextField(blank=True, null=True)
+    retries = models.IntegerField(blank=True, null=True)
+    retry_interval = models.IntegerField(blank=True, null=True)
+    timeout = models.IntegerField(blank=True, null=True)
+    active = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_hooks'
+
+
+class NcLoaders(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    parent = models.CharField(max_length=255, blank=True, null=True)
+    child = models.CharField(max_length=255, blank=True, null=True)
+    relation = models.CharField(max_length=255, blank=True, null=True)
+    resolver = models.CharField(max_length=255, blank=True, null=True)
+    functions = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_loaders'
+
+
+class NcMigrations(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    up = models.TextField(blank=True, null=True)
+    down = models.TextField(blank=True, null=True)
+    title = models.CharField(max_length=255)
+    title_down = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    batch = models.IntegerField(blank=True, null=True)
+    checksum = models.CharField(max_length=255, blank=True, null=True)
+    status = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_migrations'
+
+
+class NcModels(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    alias = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    meta = models.TextField(blank=True, null=True)
+    schema = models.TextField(blank=True, null=True)
+    schema_previous = models.TextField(blank=True, null=True)
+    services = models.TextField(blank=True, null=True)
+    messages = models.TextField(blank=True, null=True)
+    enabled = models.IntegerField(blank=True, null=True)
+    parent_model_title = models.CharField(max_length=255, blank=True, null=True)
+    show_as = models.CharField(max_length=255, blank=True, null=True)
+    query_params = models.TextField(blank=True, null=True)
+    list_idx = models.IntegerField(blank=True, null=True)
+    tags = models.CharField(max_length=255, blank=True, null=True)
+    pinned = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    mm = models.IntegerField(blank=True, null=True)
+    m_to_m_meta = models.TextField(blank=True, null=True)
+    order = models.FloatField(blank=True, null=True)
+    view_order = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_models'
+
+
+class NcPlugins(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=45, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    active = models.IntegerField(blank=True, null=True)
+    rating = models.FloatField(blank=True, null=True)
+    version = models.CharField(max_length=255, blank=True, null=True)
+    docs = models.CharField(max_length=255, blank=True, null=True)
+    status = models.CharField(max_length=255, blank=True, null=True)
+    status_details = models.CharField(max_length=255, blank=True, null=True)
+    logo = models.CharField(max_length=255, blank=True, null=True)
+    icon = models.CharField(max_length=255, blank=True, null=True)
+    tags = models.CharField(max_length=255, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    input_schema = models.TextField(blank=True, null=True)
+    input = models.TextField(blank=True, null=True)
+    creator = models.CharField(max_length=255, blank=True, null=True)
+    creator_website = models.CharField(max_length=255, blank=True, null=True)
+    price = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_plugins'
+
+
+class NcProjects(models.Model):
+    id = models.CharField(primary_key=True, max_length=128)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    status = models.CharField(max_length=255, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    config = models.TextField(blank=True, null=True)
+    meta = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_projects'
+
+
+class NcProjectsUsers(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    user_id = models.PositiveIntegerField(blank=True, null=True)
+    roles = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_projects_users'
+
+
+class NcQip3Contacta(models.Model):
+    title = models.CharField(max_length=45, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_qip3__contacta'
+
+
+class NcRelations(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    tn = models.CharField(max_length=255, blank=True, null=True)
+    rtn = models.CharField(max_length=255, blank=True, null=True)
+    field_tn = models.CharField(db_column='_tn', max_length=255, blank=True, null=True)  # Field renamed because it started with '_'.
+    field_rtn = models.CharField(db_column='_rtn', max_length=255, blank=True, null=True)  # Field renamed because it started with '_'.
+    cn = models.CharField(max_length=255, blank=True, null=True)
+    rcn = models.CharField(max_length=255, blank=True, null=True)
+    field_cn = models.CharField(db_column='_cn', max_length=255, blank=True, null=True)  # Field renamed because it started with '_'.
+    field_rcn = models.CharField(db_column='_rcn', max_length=255, blank=True, null=True)  # Field renamed because it started with '_'.
+    referenced_db_alias = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    db_type = models.CharField(max_length=255, blank=True, null=True)
+    ur = models.CharField(max_length=255, blank=True, null=True)
+    dr = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    fkn = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_relations'
+
+
+class NcResolvers(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    resolver = models.TextField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    acl = models.TextField(blank=True, null=True)
+    functions = models.TextField(blank=True, null=True)
+    handler_type = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_resolvers'
+
+
+class NcRoles(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_roles'
+
+
+class NcRoutes(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    tn = models.CharField(max_length=255, blank=True, null=True)
+    tnp = models.CharField(max_length=255, blank=True, null=True)
+    tnc = models.CharField(max_length=255, blank=True, null=True)
+    relation_type = models.CharField(max_length=255, blank=True, null=True)
+    path = models.TextField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    handler = models.TextField(blank=True, null=True)
+    acl = models.TextField(blank=True, null=True)
+    order = models.IntegerField(blank=True, null=True)
+    functions = models.TextField(blank=True, null=True)
+    handler_type = models.IntegerField(blank=True, null=True)
+    is_custom = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_routes'
+
+
+class NcRpc(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    tn = models.CharField(max_length=255, blank=True, null=True)
+    service = models.TextField(blank=True, null=True)
+    tnp = models.CharField(max_length=255, blank=True, null=True)
+    tnc = models.CharField(max_length=255, blank=True, null=True)
+    relation_type = models.CharField(max_length=255, blank=True, null=True)
+    order = models.IntegerField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    acl = models.TextField(blank=True, null=True)
+    functions = models.TextField(blank=True, null=True)
+    handler_type = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_rpc'
+
+
+class NcSharedBases(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    roles = models.CharField(max_length=255, blank=True, null=True)
+    shared_base_id = models.CharField(max_length=255, blank=True, null=True)
+    enabled = models.IntegerField(blank=True, null=True)
+    password = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'nc_shared_bases'
+
+
+class NcSharedViews(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    model_name = models.CharField(max_length=255, blank=True, null=True)
+    meta = models.TextField(blank=True, null=True)
+    query_params = models.TextField(blank=True, null=True)
+    view_id = models.CharField(max_length=255, blank=True, null=True)
+    show_all_fields = models.IntegerField(blank=True, null=True)
+    allow_copy = models.IntegerField(blank=True, null=True)
+    password = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    view_type = models.CharField(max_length=255, blank=True, null=True)
+    view_name = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_shared_views'
+
+
+class NcStore(models.Model):
+    project_id = models.CharField(max_length=255, blank=True, null=True)
+    db_alias = models.CharField(max_length=255, blank=True, null=True)
+    key = models.CharField(max_length=255, blank=True, null=True)
+    value = models.TextField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    env = models.CharField(max_length=255, blank=True, null=True)
+    tag = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'nc_store'
+
+
+class NrollrBookmarks(models.Model):
+    hash = models.CharField(unique=True, max_length=32)
+    url = models.TextField()
+    title = models.TextField(blank=True, null=True)
+    descr = models.TextField(blank=True, null=True)
+    date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'nrollr_bookmarks'
+
+
+class PollsChoice(models.Model):
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField()
+    question = models.ForeignKey('PollsQuestion', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'polls_choice'
+
+
+class PollsQuestion(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'polls_question'
+
+
+class ShaarliIn(models.Model):
+    created = models.CharField(max_length=251, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.CharField(max_length=224, blank=True, null=True)
+    shorturl = models.CharField(max_length=3336, blank=True, null=True)
+    tags0 = models.CharField(max_length=3416, blank=True, null=True)
+    title = models.CharField(max_length=2688, blank=True, null=True)
+    updated = models.CharField(max_length=425, blank=True, null=True)
+    url = models.CharField(max_length=103, blank=True, null=True)
+    tags1 = models.CharField(max_length=2216, blank=True, null=True)
+    tags2 = models.CharField(max_length=2116, blank=True, null=True)
+    tags3 = models.CharField(max_length=1216, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'shaarli_in'
+
+
+class Shaarlinkonbert(models.Model):
+    created = models.CharField(max_length=333, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.IntegerField(blank=True, null=True)
+    shorturl = models.CharField(max_length=444, blank=True, null=True)
+    tags = models.JSONField(blank=True, null=True)
+    title = models.CharField(max_length=4455, blank=True, null=True)
+    updated = models.CharField(max_length=222, blank=True, null=True)
+    url = models.CharField(max_length=8544, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'shaarlinkonbert'
+
+
+class Shaarlinkonbert01(models.Model):
+    created = models.CharField(max_length=333, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.IntegerField(blank=True, null=True)
+    shorturl = models.CharField(max_length=444, blank=True, null=True)
+    tags = models.CharField(max_length=2333, blank=True, null=True)
+    title = models.CharField(max_length=4455, blank=True, null=True)
+    updated = models.CharField(max_length=222, blank=True, null=True)
+    url = models.CharField(max_length=8544, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'shaarlinkonbert01'
+
+
+class Shaarlinkonbert02(models.Model):
+    created = models.CharField(max_length=333, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    private = models.IntegerField(blank=True, null=True)
+    shorturl = models.CharField(max_length=444, blank=True, null=True)
+    tags = models.JSONField(blank=True, null=True)
+    title = models.CharField(max_length=4455, blank=True, null=True)
+    updated = models.CharField(max_length=222, blank=True, null=True)
+    url = models.CharField(max_length=8544, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'shaarlinkonbert02'
+
+
+class States(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    state = models.CharField(max_length=32)
+    abbrev = models.CharField(max_length=8, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'states'
+
+
+class TblCity(models.Model):
+    city_id = models.AutoField(primary_key=True)
+    state_id = models.IntegerField()
+    city_name = models.CharField(max_length=35)
+
+    class Meta:
+        managed = False
+        db_table = 'tbl_city'
+
+
+class TblCountry(models.Model):
+    country_id = models.AutoField(primary_key=True)
+    country_name = models.CharField(max_length=25)
+
+    class Meta:
+        managed = False
+        db_table = 'tbl_country'
+
+
+class TblState(models.Model):
+    state_id = models.AutoField(primary_key=True)
+    country_id = models.IntegerField()
+    state_name = models.CharField(max_length=35)
+
+    class Meta:
+        managed = False
+        db_table = 'tbl_state'
+
+
+class XcKnexMigrations(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)
+    batch = models.IntegerField(blank=True, null=True)
+    migration_time = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'xc_knex_migrations'
+
+
+class XcKnexMigrationsLock(models.Model):
+    index = models.AutoField(primary_key=True)
+    is_locked = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'xc_knex_migrations_lock'
+
+
+class XcUsers(models.Model):
+    email = models.CharField(max_length=255, blank=True, null=True)
+    password = models.CharField(max_length=255, blank=True, null=True)
+    salt = models.CharField(max_length=255, blank=True, null=True)
+    firstname = models.CharField(max_length=255, blank=True, null=True)
+    lastname = models.CharField(max_length=255, blank=True, null=True)
+    username = models.CharField(max_length=255, blank=True, null=True)
+    refresh_token = models.CharField(max_length=255, blank=True, null=True)
+    invite_token = models.CharField(max_length=255, blank=True, null=True)
+    invite_token_expires = models.CharField(max_length=255, blank=True, null=True)
+    reset_password_expires = models.DateTimeField(blank=True, null=True)
+    reset_password_token = models.CharField(max_length=255, blank=True, null=True)
+    email_verification_token = models.CharField(max_length=255, blank=True, null=True)
+    email_verified = models.IntegerField(blank=True, null=True)
+    roles = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'xc_users'
+
+
+class ZcopyMark616Bookmk(models.Model):
+    title = models.CharField(max_length=6430, blank=True, null=True)
+    url = models.TextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
+    bhash = models.CharField(max_length=1930, blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(blank=True, null=True)
+    updated_at = models.DateTimeField(blank=True, null=True)
+    tagtext = models.CharField(max_length=1930, blank=True, null=True)
+    id_shaarli = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'zcopy_mark616_bookmk'

@@ -12,7 +12,7 @@ services:
     # Make sure to use the latest release from https://hedgedoc.org/latest-release
     image: quay.io/hedgedoc/hedgedoc:1.9.6
     volumes:
-      - ./sysdata/hedguploads:/hedgedoc/public/uploads
+      - ./sysdata/hedguploads:./public/uploads
     env_file:
       - ./.env
     ports:
@@ -23,10 +23,11 @@ services:
     # depends_on:
       # - dbh
     environment:
-      - VIRTUAL_HOST=hedgem.198.144.183.160.sslip.io
+      - VIRTUAL_HOST=hedgem.198.144.183.160.nip.io,hedge.198.144.183.160.nip.io
       - VIRTUAL_PORT=3000
-      - LETSENCRYPT_HOST=hedgem.198.144.183.160.sslip.io
+      - LETSENCRYPT_HOST=hedgem.198.144.183.160.nip.io,hedge.198.144.183.160.nip.io
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
+      - UPLOADS_MODE=0777
     networks:
       - sister2
       - sister
