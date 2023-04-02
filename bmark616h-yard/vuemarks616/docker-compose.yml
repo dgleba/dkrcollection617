@@ -24,8 +24,10 @@ services:
     networks:
       - sister
     environment:
-      -     VIRTUAL_HOST=mark616g.198.144.183.160.nip.io
-      - LETSENCRYPT_HOST=mark616g.198.144.183.160.nip.io
+      - VIRTUAL_HOST=mark616g.198.144.183.160.nip.io,markg.daveg.win
+      # - VIRTUAL_HOST=markg.daveg.win
+      - LETSENCRYPT_HOST=mark616g.198.144.183.160.nip.io,markg.daveg.win
+      # - LETSENCRYPT_HOST=markg.daveg.win
       - VIRTUAL_PORT=80
       - LETSENCRYPT_EMAIL=dgleba@gmail.com
       - VIRTUAL_NETWORK=sister

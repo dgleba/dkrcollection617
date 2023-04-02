@@ -1,0 +1,46 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2023-04-01[Apr-Sat]17-03PM 
+
+
+[33mlets_1    |[0m 2023-04-01T20:03:23.443324847Z 2023/04/01 20:03:23 Generated '/app/letsencrypt_service_data' from 12 containers
+[33mlets_1    |[0m 2023-04-01T20:03:23.443373794Z 2023/04/01 20:03:23 Running '/app/signal_le_service'
+[33mlets_1    |[0m 2023-04-01T20:03:23.609023450Z Creating/renewal hedgem.198.144.183.160.nip.io certificates... (hedgem.198.144.183.160.nip.io hedge.198.144.183.160.nip.io)
+[33mlets_1    |[0m 2023-04-01T20:03:24.136669922Z [Sat Apr  1 20:03:24 UTC 2023] Domains not changed.
+[33mlets_1    |[0m 2023-04-01T20:03:24.152491049Z [Sat Apr  1 20:03:24 UTC 2023] Skip, Next renewal time is: Wed May 31 19:47:48 UTC 2023
+[33mlets_1    |[0m 2023-04-01T20:03:24.160529712Z [Sat Apr  1 20:03:24 UTC 2023] Add '--force' to force to renew.
+[33mlets_1    |[0m 2023-04-01T20:03:24.453937847Z Creating/renewal mark616.198.144.183.160.nip.io certificates... (mark616.198.144.183.160.nip.io mark.daveg.win mark.davegg.com)
+[33mlets_1    |[0m 2023-04-01T20:03:25.138953275Z [Sat Apr  1 20:03:25 UTC 2023] Using CA: https://acme-v02.api.letsencrypt.org/directory
+[33mlets_1    |[0m 2023-04-01T20:03:25.316207758Z [Sat Apr  1 20:03:25 UTC 2023] Creating domain key
+[33mlets_1    |[0m 2023-04-01T20:03:25.713248089Z [Sat Apr  1 20:03:25 UTC 2023] The domain key is here: /etc/acme.sh/dgleba@gmail.com/mark616.198.144.183.160.nip.io/mark616.198.144.183.160.nip.io.key
+[33mlets_1    |[0m 2023-04-01T20:03:25.760190741Z [Sat Apr  1 20:03:25 UTC 2023] Multi domain='DNS:mark616.198.144.183.160.nip.io,DNS:mark.daveg.win,DNS:mark.davegg.com'
+[33mlets_1    |[0m 2023-04-01T20:03:25.818324915Z [Sat Apr  1 20:03:25 UTC 2023] Getting domain auth token for each domain
+[33mlets_1    |[0m 2023-04-01T20:03:27.756210521Z [Sat Apr  1 20:03:27 UTC 2023] Getting webroot for domain='mark616.198.144.183.160.nip.io'
+[33mlets_1    |[0m 2023-04-01T20:03:27.915989528Z [Sat Apr  1 20:03:27 UTC 2023] Getting webroot for domain='mark.daveg.win'
+[33mlets_1    |[0m 2023-04-01T20:03:28.074204422Z [Sat Apr  1 20:03:28 UTC 2023] Getting webroot for domain='mark.davegg.com'
+[33mlets_1    |[0m 2023-04-01T20:03:28.371695775Z [Sat Apr  1 20:03:28 UTC 2023] mark616.198.144.183.160.nip.io is already verified, skip http-01.
+[33mlets_1    |[0m 2023-04-01T20:03:28.405821553Z [Sat Apr  1 20:03:28 UTC 2023] Verifying: mark.daveg.win
+[33mlets_1    |[0m 2023-04-01T20:03:31.033492119Z [Sat Apr  1 20:03:31 UTC 2023] Pending
+[33mlets_1    |[0m 2023-04-01T20:03:33.319557043Z [Sat Apr  1 20:03:33 UTC 2023] Success
+[33mlets_1    |[0m 2023-04-01T20:03:33.353966067Z [Sat Apr  1 20:03:33 UTC 2023] Verifying: mark.davegg.com
+[33mlets_1    |[0m 2023-04-01T20:03:38.518050450Z [Sat Apr  1 20:03:38 UTC 2023] Success
+[33mlets_1    |[0m 2023-04-01T20:03:38.578714382Z [Sat Apr  1 20:03:38 UTC 2023] Verify finished, start to sign.
+[33mlets_1    |[0m 2023-04-01T20:03:38.617909855Z [Sat Apr  1 20:03:38 UTC 2023] Lets finalize the order.
+[33mlets_1    |[0m 2023-04-01T20:03:38.626621197Z [Sat Apr  1 20:03:38 UTC 2023] Le_OrderFinalize='https://acme-v02.api.letsencrypt.org/acme/finalize/1039522387/173617804467'
+[33mlets_1    |[0m 2023-04-01T20:03:39.362387187Z [Sat Apr  1 20:03:39 UTC 2023] Downloading cert.
+[33mlets_1    |[0m 2023-04-01T20:03:39.374325295Z [Sat Apr  1 20:03:39 UTC 2023] Le_LinkCert='https://acme-v02.api.letsencrypt.org/acme/cert/032c25e759c3ec49106afd12d0d4efdfb50d'
+[33mlets_1    |[0m 2023-04-01T20:03:39.722558300Z [Sat Apr  1 20:03:39 UTC 2023] Cert success.
+
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2023-04-01[Apr-Sat]17-03PM 
+
+
+
