@@ -83,10 +83,11 @@ class bookmkAdmin(admin.ModelAdmin):
 
     # https://stackoverflow.com/questions/910169/resize-fields-in-django-admin
     # class YourModelAdmin(admin.ModelAdmin):
-    #     formfield_overrides = {
     #         models.CharField: {'widget': TextInput(attrs={'size':'20'})},
-    #         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
-    #     }
+    # this doesn't seem to work.
+        formfield_overrides = {
+            models.TextField: {'widget': Textarea(attrs={'rows':55, 'cols':99})},
+        }
 
     class Media:
         css = { "all": ("mark616/first.css",) }
