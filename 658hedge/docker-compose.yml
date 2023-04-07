@@ -17,8 +17,9 @@ services:
     networks:
       - sister 
   apph:
+   # https://hedgep.198.144.183.160.nip.io
     # Make sure to use the latest release from https://hedgedoc.org/latest-release
-    image: quay.io/hedgedoc/hedgedoc:1.9.4
+    image: quay.io/hedgedoc/hedgedoc:1.9.6
     volumes:
       - uploads:/hedgedoc/public/uploads
     env_file:
@@ -40,3 +41,4 @@ services:
 volumes:
   database:
   uploads:
+  

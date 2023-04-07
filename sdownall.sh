@@ -6,10 +6,12 @@ cd /ap/dkr/dkrcollection617a
 
 docker-compose -f ./bmark616h-yard/dj616b/docker-compose.prod.yml down  
 
+docker-compose -f ./bmark616h-yard/vuemarks616/docker-compose.yml down 
+
+
 docker-compose -f ./bmark616h-yard/php605m/docker-compose.yml     down  
 
 
-docker-compose -f ./bmark616h-yard/vuemarks616/docker-compose.yml down 
 
 docker-compose -f ./bmark616h-yard/php605m/docker-compose.yml    down
 docker-compose -f ./bmark616h-yard/dj616b/docker-compose.yml     down

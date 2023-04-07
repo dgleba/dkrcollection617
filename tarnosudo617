@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function Purpose() {
+# begin block comment =============================
+: <<'END'
+
+
+#  Purpose:  tar the dkr617 folder - all files. with sudo
+
+
+# usage:   bash /ap/dkr/dkrcollection617a/tarfull617
+
+
+END
+# end block comment ===============================
+}
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#cd ; 
+date ; set +vx  ; set -vx ; # echo off, then echo on
+#
+dts=$(date +"__%Y.%m.%d_%H.%M.%S")
+
+
+date
+
+set +vx
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  dump db
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2023-04-07[Apr-Fri]12-16PM 
+
+
+cd /ap/dkr/dkrcollection617a/bmark616h-yard/php605m
+make dump
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  move older sql backups
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2023-04-07[Apr-Fri]12-07PM 
+
+sd=/ap/dkr/dkrcollection617a/bmark616h-yard/data/crib/t1
+dd=/ap/zip/sqlbackups
+mkdir -p $dd
+find $sd -maxdepth 1 -mtime +2 -type f -exec mv "{}" $dd \;
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  full tar
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2023-04-07[Apr-Fri]12-08PM 
+
+
+cd /ap/dkr
+tar -cvz \
+        --exclude="cftunnel/sysdata/ncdocroot/*" \
+        --exclude="cftunnel/sysdata/ncdb/*" \
+        --exclude="tmp/*" \
+        --exclude="x/*"  \
+        --exclude="node_modules/*"  \
+    -f /ap/zip/dkr617-nosudo-racknerd.tgz   dkrcollection617a/
+    # -f /ap/zip/dkr617-fullsudo-racknerd_$(date +"_%Y.%m.%d_%H.%M.%S").tgz dkrcollection617a/
+
+date
+
