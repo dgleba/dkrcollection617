@@ -85,7 +85,7 @@ class NotesAdmin(admin.ModelAdmin):
 
     # https://stackoverflow.com/questions/1949248/how-to-add-clickable-links-to-a-field-in-django-admin
     def slink(self, obj):
-        return format_html("<a href='https://hedge.198.144.183.160.nip.io/s/{url}'  target='_blank'>Link..</a>", url=obj.shortid)
+        return format_html("<a href='https://hedge.daveg.win/s/{url}'  target='_blank'>Link..</a>", url=obj.shortid)
 
     @admin.display()
     def content_tr(self, obj):
