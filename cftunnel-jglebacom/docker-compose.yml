@@ -1,0 +1,28 @@
+version: "3.7"
+
+networks:
+  sister3:
+    name: sister3
+
+services:
+
+  # Cloudflare Tunnel Container
+  tunnel:
+    image: cloudflare/cloudflared
+    command: tunnel  --no-autoupdate  run  --token ${TUNNEL_TOKEN} 
+    restart: unless-stopped
+    # environment:
+    #   TUNNEL_TOKEN: ${TUNNEL_TOKEN} 
+    user:  root
+    # depends_on:
+      # - sf5
+      # - main
+    networks:
+      - sister3
+
+# volumes:
+  # db:
+  # data:
+  # nextcloud:
+  # nextcloud_db:
+

@@ -1,0 +1,22 @@
+# David Gleba
+
+
+# to run it..
+
+cd to project folder..
+
+## install
+
+`bash shi.sh `
+
+## run dev
+
+`bash shdev.sh`
+
+
+? build ?
+
+# production
+
+`dc up`
+

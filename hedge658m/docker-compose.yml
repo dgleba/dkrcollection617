@@ -5,6 +5,8 @@ networks:
     name: sister2
   sister:
     name: sister
+  sister3:
+    name: sister3
 
 services:
 
@@ -29,6 +31,7 @@ services:
       # - LETSENCRYPT_EMAIL=dgleba@gmail.com
       - UPLOADS_MODE=0777
     networks:
+      - sister3
       - sister2
       - sister
 

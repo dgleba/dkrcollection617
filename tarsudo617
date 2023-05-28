@@ -8,7 +8,7 @@ function Purpose() {
 #  Purpose:  tar the dkr617 folder - all files. with sudo
 
 
-# usage:   bash /ap/dkr/dkrcollection617a/tarfull617
+# usage:   bash /ap/dkr/dkrcollection617a/tarsudo617
 
 
 END

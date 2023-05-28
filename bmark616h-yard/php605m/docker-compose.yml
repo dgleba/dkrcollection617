@@ -76,6 +76,7 @@ services:
     networks:
       - sister
       - sister2
+      - sister3
 
 
   adminer:

@@ -3,6 +3,8 @@ version: "3.7"
 networks:
   sister2:
     name: sister2
+  sister3:
+    name: sister3
 
 services:
 
@@ -24,3 +26,4 @@ services:
     restart: always
     networks:
       - sister2
+      - sister3

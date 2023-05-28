@@ -9,6 +9,8 @@ networks:
     name: sister
   sister2:
     name: sister2
+  sister3:
+    name: sister3
     
 volumes:
   mysqldata:
@@ -18,7 +20,7 @@ services:
   djprod:
     # http://192.168.88.60:6464/adminb/blogapp/post/
     build: ./djangosite
-    restart: on-failure
+    restart: always
     env_file:
       - ./.env
     command: gunicorn --bind 0.0.0.0:8080 --preload  --access-logfile -  --error-logfile -  djangoproj.wsgi 
@@ -40,6 +42,7 @@ services:
       - 499d-django_default 
       - sister
       - sister2
+      - sister3
 
   # nginx to serve production django
   nginx:
@@ -64,6 +67,7 @@ services:
       - 499d-django_default 
       - sister
       - sister2
+      - sister3
 
   # markv:
     # just nginx without vue build 
@@ -127,17 +131,17 @@ services:
   #   networks:
   #     - 499d-django_default      
 
-#
-#   depends_on:
-#     - db
-# db:
-#   image: "postgres:10.3-alpine"
-#   restart: unless-stopped
-#   env_file:
-#     - ./.env
-#   ports:
-#     - "5432:5432"
-#   volumes:
-#     - ./postgres/data:/var/lib/postgresql/data
+  #
+  #   depends_on:
+  #     - db
+  # db:
+  #   image: "postgres:10.3-alpine"
+  #   restart: unless-stopped
+  #   env_file:
+  #     - ./.env
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - ./postgres/data:/var/lib/postgresql/data
 
 
