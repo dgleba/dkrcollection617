@@ -1,0 +1,6 @@
+rustdesk01/docker-compose.yml
+rustdesk01/hbbs/id_ed25519.pub
+rustdesk01/hbbs/db_v2.sqlite3-shm
+rustdesk01/hbbs/db_v2.sqlite3
+rustdesk01/hbbs/db_v2.sqlite3-wal
+rustdesk01/hbbs/id_ed25519

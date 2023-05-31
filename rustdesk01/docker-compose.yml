@@ -15,12 +15,12 @@ services:
     image: rustdesk/rustdesk-server:latest
     command: hbbs -r 198.144.183.160.nip.io:21117
     volumes:
-      - ./hbbs:/root
+      - ./sysdata/hbbs:/root
     networks:
       - rustdesk-net
     depends_on:
       - hbbr
-    restart: unless-stopped
+    restart: always
 
   hbbr:
     container_name: hbbr
@@ -30,7 +30,8 @@ services:
     image: rustdesk/rustdesk-server:latest
     command: hbbr
     volumes:
-      - ./hbbr:/root
+      - ./sysdata/hbbr:/root
     networks:
       - rustdesk-net
-    restart: unless-stopped
+    restart: always
+    
