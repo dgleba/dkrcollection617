@@ -1,4 +1,8 @@
 
+# http://192.168.88.55:8080
+# https://djbuilder17dev.198.144.183.160.nip.io
+
+
 
 # see .env for vars..
     # export nodeimg='node:14.15-slim'

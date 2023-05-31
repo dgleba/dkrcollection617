@@ -1,0 +1,27 @@
+
+
+------------
+
+2023-05-28
+
+prod works if using yarn build --development.
+
+
+------------
+
+
+dev:
+
+got error
+
+client.ts:22 WebSocket connection to 'wss://djbuilder17.198.144.183.160.nip.io:8080/' failed: 
+(anonymous) @ client:188
+client.ts:230 [vite] server connection lost. polling for restart...
+
+
+------------
+
+
+
+------------
+

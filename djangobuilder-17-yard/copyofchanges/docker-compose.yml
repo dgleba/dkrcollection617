@@ -25,6 +25,8 @@ services:
     # not done.. command:       - firebase use production        CMD ["nginx", "-g", "daemon off;"]
     networks:
       - sister
+    env_file:
+      - ./.env.development.local
     environment:
       # - VIRTUAL_HOST=mark616g.198.144.183.160.nip.io,markg.daveg.win
       # - LETSENCRYPT_HOST=mark616g.198.144.183.160.nip.io,markg.daveg.win

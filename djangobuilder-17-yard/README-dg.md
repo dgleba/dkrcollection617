@@ -14,7 +14,10 @@ cd to project folder..
 `bash shdev.sh`
 
 
-? build ?
+## build
+
+`bash sdb.sh`
+
 
 # production
 
